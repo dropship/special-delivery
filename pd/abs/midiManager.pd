@@ -1,0 +1,37 @@
+#N canvas 422 87 491 602 10;
+#X msg 59 510 stop;
+#X obj 40 350 sel 0;
+#X obj 40 320 mod 128;
+#X obj 79 480 sel 0;
+#X obj 40 380 t b b b;
+#X text 37 30 Initialisation;
+#X text 37 40 ------------------------------------------------------------
+;
+#X obj 40 546 s \$0-MIDI-seqControls;
+#X text 37 260 ------------------------------------------------------------
+;
+#X text 37 250 Sequencing MIDI files;
+#X text 124 482 // TODO(joe):Figure out a better way to stop;
+#X obj 79 410 s \$1-CHORDS-resetIndex;
+#X obj 79 450 r \$1-TIMEBASE-metroStartStop;
+#X obj 43 64 r \$1-INIT-bang;
+#X obj 43 96 t b b b b;
+#X obj 94 124 openMidifileInfo \$1 chords \$0;
+#X obj 43 215 openMidifileInfo-voices \$1 voices \$0;
+#X obj 77 154 openMidifileInfo \$1 bass \$0;
+#X obj 60 184 openMidifileInfo \$1 drums \$0;
+#X obj 40 290 r 0-tick;
+#X connect 0 0 7 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 7 0;
+#X connect 4 1 0 0;
+#X connect 4 2 11 0;
+#X connect 12 0 3 0;
+#X connect 13 0 14 0;
+#X connect 14 0 16 0;
+#X connect 14 1 18 0;
+#X connect 14 2 17 0;
+#X connect 14 3 15 0;
+#X connect 19 0 2 0;

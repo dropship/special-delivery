@@ -1,0 +1,8 @@
+#N canvas 415 188 213 216 10;
+#X obj 100 70 vradio 10 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 100 174 s \$0-0-prob;
+#X obj 100 154 / 7;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X coords 0 -1 1 1 10 100 1 100 50;
