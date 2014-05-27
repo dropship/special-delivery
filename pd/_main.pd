@@ -20,7 +20,7 @@
 #X declare -path abs/huge;
 #X declare -path audio/vox;
 #X declare -path abs/comp;
-#N canvas 247 58 703 354 io 1;
+#N canvas 247 58 703 354 io 0;
 #X obj 34 47 catch~ LEFT;
 #X obj 134 47 catch~ RIGHT;
 #X obj 34 292 dac~;
