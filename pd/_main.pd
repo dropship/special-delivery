@@ -259,10 +259,10 @@
 #X obj 37 329 u_samplebank square MachineDrumSquareC.wav;
 #N canvas 0 22 450 300 vox 0;
 #X obj 50 44 u_samplebank2 lets-drop lets-drop.wav;
-#X obj 50 64 u_samplebank2 excuse excuse.aif;
+#X obj 50 64 u_samplebank2 excuse excuse.wav;
 #X restore 38 488 pd vox;
-#X obj 37 219 u_samplebank2 toms toms.aif;
 #X obj 38 433 u_samplebank2 door-bell door-bell.wav;
+#X obj 37 219 u_samplebank2 toms toms.wav;
 #X connect 13 0 14 0;
 #X connect 15 0 13 0;
 #X restore 25 103 pd samplebanks;
