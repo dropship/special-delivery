@@ -1,4 +1,4 @@
-#N canvas 373 402 313 253 10;
+#N canvas 962 436 313 253 10;
 #X declare -path abs;
 #X declare -path audio;
 #X declare -path rj;
@@ -85,7 +85,7 @@
 #X connect 30 0 31 0;
 #X connect 31 0 24 0;
 #X restore 25 50 pd io;
-#N canvas 0 22 383 623 init 0;
+#N canvas 0 22 922 640 init 0;
 #X obj 62 56 declare -path abs;
 #X obj 62 116 declare -path audio;
 #X obj 62 36 declare -path rj;
@@ -376,4 +376,5 @@
 #X obj 118 83 print;
 #X connect 1 0 0 0;
 #X restore 25 71 pd events;
+#X obj 206 89 EXTERN_DUMMY;
 #X connect 6 0 7 0;
