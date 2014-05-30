@@ -1,4 +1,4 @@
-#N canvas 824 121 379 252 10;
+#N canvas 669 218 379 252 10;
 #X declare -path abs;
 #X declare -path audio;
 #X declare -path rj;
