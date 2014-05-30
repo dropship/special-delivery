@@ -1,22 +1,26 @@
-#N canvas 751 557 574 231 10;
-#X obj 36 112 list prepend BUILD;
-#X obj 155 112 list prepend DROP;
-#X obj 266 112 list prepend GAIN;
-#X obj 377 112 list prepend RESET;
-#X obj 36 35 vsl 30 70 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6900 1;
-#X msg 155 91 1;
-#X obj 155 41 bng 45 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X floatatom 266 92 5 0 0 0 - - -, f 5;
-#X obj 377 57 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 36 177 s #EXTERN_TO_PD;
-#X obj 36 134 list trim;
-#X obj 155 134 list trim;
-#X obj 266 134 list trim;
-#X obj 377 134 list trim;
-#X msg 377 92 1;
+#N canvas 603 453 779 505 10;
+#X obj 103 299 list prepend BUILD;
+#X obj 222 299 list prepend DROP;
+#X obj 333 299 list prepend GAIN;
+#X obj 444 299 list prepend RESET;
+#X obj 103 136 vsl 30 70 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 222 277 1;
+#X obj 141 134 bng 45 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 142 204 5 0 0 0 - - -, f 5;
+#X obj 193 134 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 103 364 s #EXTERN_TO_PD;
+#X obj 103 321 list trim;
+#X obj 222 321 list trim;
+#X obj 333 321 list trim;
+#X obj 444 321 list trim;
+#X msg 444 277 1;
+#X text 101 117 Build;
+#X text 140 116 Drop;
+#X text 140 185 Gain;
+#X text 191 116 Reset;
 #X connect 0 0 10 0;
 #X connect 1 0 11 0;
 #X connect 2 0 12 0;
@@ -31,3 +35,4 @@
 #X connect 12 0 9 0;
 #X connect 13 0 9 0;
 #X connect 14 0 3 0;
+#X coords 0 -1 1 1 135 122 1 100 100;
