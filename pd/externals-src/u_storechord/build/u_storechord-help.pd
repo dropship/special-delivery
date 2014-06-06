@@ -1,0 +1,70 @@
+#N canvas 905 107 790 556 10;
+#X obj 317 403 u_storechord;
+#X msg 369 320 clear;
+#X obj 385 341 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 416 319 // a bang the right inlet or a clear to the left will
+do the same thing - remove all the stored notes;
+#N canvas 0 22 450 300 show 0;
+#X obj 41 39 inlet;
+#X obj 186 36 inlet;
+#X obj 41 124 outlet;
+#X msg 186 76 set;
+#X obj 41 59 list prepend set;
+#X obj 41 83 list trim;
+#X obj 186 57 b;
+#X connect 0 0 4 0;
+#X connect 1 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 6 0 3 0;
+#X restore 224 472 pd show;
+#X msg 224 494 39 0;
+#N canvas 0 22 450 300 show 0;
+#X obj 41 39 inlet;
+#X obj 186 36 inlet;
+#X obj 41 124 outlet;
+#X msg 186 76 set;
+#X obj 41 59 list prepend set;
+#X obj 41 83 list trim;
+#X obj 186 57 b;
+#X connect 0 0 4 0;
+#X connect 1 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 6 0 3 0;
+#X restore 559 475 pd show;
+#X msg 559 497 2 0;
+#X msg 258 204 0 39 \$1;
+#X obj 258 160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 258 180 * 100;
+#X msg 310 255 2 49 0;
+#X text 44 472 // left outlet goes to synth;
+#X text 44 492 // 'midiPitch midiVelocity';
+#X text 322 474 // right outlet gets ignored note-offs;
+#X text 322 494 // 'stepNum midiVelocity';
+#X text 315 202 // note-on / note-off messages get stored and output
+to left outlet;
+#X text 360 253 // if a note-off message doesn't have a corresponding
+note-on it's ignored (or if the stepNum doesn't match);
+#X msg 138 73 0 39 100;
+#X text 209 44 // input is in the following format: 'stepNum midiPitch
+midiVelocity';
+#X text 209 73 // where: 'stepNum' is the index of the pitch in the
+scale table. 'midiPitch' is it's corresponding midi output \, and 'midiVelocity'
+the respective velocity.;
+#X text 19 11 u_storechord - help;
+#X text 19 21 ---------------------------------;
+#X connect 0 0 4 0;
+#X connect 0 1 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 8 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 11 0 0 0;
