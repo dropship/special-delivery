@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable
+END
+Makefile.sources
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/Makefile.sources
+END
+fragile.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/fragile.h
+END
+forky.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/forky.h
+END
+fringe.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/fringe.h
+END
+Makefile.objects
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/Makefile.objects
+END
+loader.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/loader.c
+END
+standalone.c
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/standalone.c
+END
+fragile.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/fragile.c
+END
+forky.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/forky.c
+END
+fringe.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/fringe.c
+END
+loader.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/loader.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/Makefile
+END
+pd_imp.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/pd_imp.h
+END
+standalone.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/unstable/standalone.h
+END

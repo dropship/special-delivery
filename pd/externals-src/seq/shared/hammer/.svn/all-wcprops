@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/hammer
+END
+Makefile.sources
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/hammer/Makefile.sources
+END
+file.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/hammer/file.c
+END
+tree.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/hammer/tree.c
+END
+Makefile.objects
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/hammer/Makefile.objects
+END
+file.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/hammer/file.h
+END
+gui.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/hammer/gui.c
+END
+tree.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/hammer/tree.h
+END
+gui.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/hammer/gui.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/hammer/Makefile
+END

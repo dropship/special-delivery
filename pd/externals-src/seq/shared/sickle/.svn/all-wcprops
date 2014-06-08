@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/sickle
+END
+Makefile.sources
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/sickle/Makefile.sources
+END
+sic.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/sickle/sic.c
+END
+arsic.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/sickle/arsic.c
+END
+sic.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/sickle/sic.h
+END
+Makefile.objects
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/sickle/Makefile.objects
+END
+arsic.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/sickle/arsic.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/sickle/Makefile
+END

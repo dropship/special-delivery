@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common
+END
+patchvalue.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/patchvalue.h
+END
+clc.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/clc.c
+END
+vefl.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/vefl.h
+END
+fitter.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/fitter.h
+END
+props.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/props.c
+END
+clc.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/clc.h
+END
+props.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/props.h
+END
+Makefile.sources
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/Makefile.sources
+END
+grow.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/grow.c
+END
+qtree.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/qtree.c
+END
+os.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/os.c
+END
+dict.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/dict.c
+END
+grow.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/grow.h
+END
+port.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/port.c
+END
+mifi.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/mifi.c
+END
+Makefile.objects
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/Makefile.objects
+END
+qtree.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/qtree.h
+END
+os.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/os.h
+END
+messtree.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/messtree.c
+END
+dict.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/dict.h
+END
+port.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/port.h
+END
+mifi.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/mifi.h
+END
+messtree.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/messtree.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/Makefile
+END
+loud.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/loud.c
+END
+loud.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/loud.h
+END
+binport.c
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/binport.c
+END
+binport.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/binport.h
+END
+rand.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/rand.c
+END
+lex.c
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/lex.c
+END
+rand.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/rand.h
+END
+patchvalue.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/patchvalue.c
+END
+vefl.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/vefl.c
+END
+fitter.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/fitter.c
+END
+lex.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/common/lex.h
+END

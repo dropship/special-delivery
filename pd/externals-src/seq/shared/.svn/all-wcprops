@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared
+END
+Makefile.sources
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/Makefile.sources
+END
+getridof.baddeps
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/getridof.baddeps
+END
+Makefile.objects
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/Makefile.objects
+END
+notes.txt
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/notes.txt
+END
+shared.c
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/shared.c
+END
+shared.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/shared.h
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/Makefile
+END
+Makefile.dirs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/fireplayer/!svn/ver/209/trunk/pd-extended/externals/miXed/shared/Makefile.dirs
+END
