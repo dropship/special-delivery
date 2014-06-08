@@ -21,6 +21,8 @@
 #X obj 52 178 s_osc \$0-sine-key sine;
 #X obj 52 208 *~ 1;
 #X obj 52 75 + 12;
+#X obj 274 158 r sine-key-voice-all-off;
+#X msg 271 182 0;
 #X connect 1 0 18 0;
 #X connect 6 0 19 0;
 #X connect 7 0 6 0;
@@ -40,3 +42,5 @@
 #X connect 19 0 20 0;
 #X connect 20 0 9 0;
 #X connect 21 0 7 0;
+#X connect 22 0 23 0;
+#X connect 23 0 11 0;

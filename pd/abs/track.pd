@@ -1,4 +1,4 @@
-#N canvas 282 22 927 804 10;
+#N canvas 445 54 930 891 10;
 #N canvas 1058 134 337 438 snare 0;
 #X obj 43 357 *~;
 #X obj 123 357 *~;
@@ -69,7 +69,7 @@
 #N canvas 0 22 325 310 trap 0;
 #X msg 19 245 1;
 #X obj 48 221 spigot;
-#X obj 81 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 81 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 98 221 spigot;
 #X obj 131 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -137,9 +137,9 @@
 #X obj 19 335 sel 1;
 #X obj 106 252 r generate-track-\$1;
 #N canvas 772 124 447 330 new-sequence 0;
-#X msg 48 -8 0 0 1 1 0 0 0 0 1 0 1 0 1 1 0 0;
+#X msg 48 -8 1 0 0 1 0 1 1 0 1 1 1 0 0 0 1 0;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$2;
+#X msg 48 191 \$8;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -237,7 +237,7 @@
 #X obj 241 280 list prepend;
 #X obj 241 301 list trim;
 #X obj 241 333 route 0 1;
-#X obj 310 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 310 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 241 376 s_playtable;
 #X obj 331 376 s_playtable;
@@ -372,7 +372,7 @@
 #X connect 34 0 31 0;
 #X connect 35 0 1 0;
 #X restore 396 312 pd synth;
-#N canvas 29 22 590 804 piano 0;
+#N canvas 29 22 592 910 piano 0;
 #X obj 33 52 s_samplersynth \$0 ped_mf 60 36 wav 1;
 #X obj 34 160 r notes;
 #X obj 34 282 list prepend;
@@ -408,6 +408,7 @@
 #X obj 345 136 sel 0;
 #X obj 345 160 s ped_mf-all-notes-off;
 #X obj 292 104 t f f;
+#X obj 355 182 s sine-key-voice-all-off;
 #X connect 0 0 11 0;
 #X connect 0 1 13 0;
 #X connect 0 2 14 0;
@@ -429,6 +430,7 @@
 #X connect 14 0 1 0;
 #X connect 14 1 12 1;
 #X connect 15 0 16 0;
+#X connect 15 0 18 0;
 #X connect 17 0 4 0;
 #X connect 17 1 15 0;
 #X restore 350 87 pd chordparse;
@@ -711,17 +713,16 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X connect 69 0 26 0;
 #X connect 69 1 62 0;
 #X connect 70 0 68 0;
-#X connect 72 0 73 0;
 #X connect 73 0 33 0;
 #X restore 25 723 pd piano;
 #X obj 25 307 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3900 1;
 #N canvas 0 107 501 767 kick 0;
 #X obj 21 393 s_playtable2;
 #X obj 21 578 *~;
 #X obj 68 578 *~;
 #X obj 83 552 line~;
-#X msg 21 367 kick-0;
+#X msg 21 367 kick-1;
 #X msg 41 301 set kick-\$1;
 #X obj 41 254 r generate-track-\$1;
 #X obj 83 529 inlet;
@@ -750,7 +751,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X obj 80 291 t f f;
 #X obj 132 325 symbol;
 #X obj 233 112 vradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 6;
 #X obj 233 248 / 7;
 #X obj 233 273 swap 1;
 #X obj 233 298 -;
@@ -920,8 +921,8 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X connect 71 0 72 0;
 #X restore 25 632 pd kick;
 #X obj 25 399 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#N canvas 744 22 618 927 timebase 0;
+-1 -1 3900 1;
+#N canvas 744 22 618 927 timebase 1;
 #X obj 34 173 loadbang;
 #X obj 34 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
@@ -1147,11 +1148,11 @@ of a tick;
 #X connect 106 0 104 1;
 #X restore 26 37 pd timebase;
 #X obj 25 490 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3900 1;
 #X obj 25 583 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3900 1;
 #X obj 142 307 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3900 1;
 #N canvas 341 228 412 498 fx 0;
 #X obj 42 388 *~;
 #X obj 122 388 *~;
@@ -1167,7 +1168,7 @@ of a tick;
 #X obj 42 88 mod 256;
 #X obj 172 283 s_playtable2;
 #X msg 186 196 set Zenhiser-DL-RF01-\$1;
-#X msg 172 236 Zenhiser-DL-RF01-1;
+#X msg 172 236 Zenhiser-DL-RF01-11;
 #X obj 186 172 random 16;
 #X floatatom 86 117 5 0 0 0 - - -, f 5;
 #X connect 0 0 4 0;
@@ -1212,9 +1213,9 @@ of a tick;
 #X obj 245 215 t f f;
 #X obj 332 225 r generate-track-\$1;
 #N canvas 772 124 447 330 new-sequence 0;
-#X msg 48 -8 0 1 1 0 0 1 0 1 1 0 0 0 0 0 0 1;
+#X msg 48 -8 1 1 1 0 1 1 1 0 1 1 1 0 0 0 1 0;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$1;
+#X msg 48 191 \$8;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -1275,9 +1276,9 @@ of a tick;
 #X obj 245 69 / 8;
 #X obj 245 270 sel 1;
 #N canvas 772 124 447 330 new-sequence 0;
-#X msg 48 -8 3 0 1 3 3 0 3 3 3 3 0 2 1 3 3 1;
+#X msg 48 -8 2 3 1 3 2 1 0 2 2 0 1 0 1 2 3 3;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$1;
+#X msg 48 191 \$8;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -1365,7 +1366,7 @@ of a tick;
 #X restore 62 496 pd del;
 #X obj 42 19 loadbang;
 #X msg 42 42 1;
-#X obj 299 74 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 299 74 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 299 28 r generate-track-\$1;
 #X obj 299 51 random 2;
@@ -1440,12 +1441,10 @@ of a tick;
 #X connect 49 0 46 0;
 #X connect 50 0 30 0;
 #X restore 141 448 pd atmos;
-#N canvas 259 81 1240 796 mix 0;
+#N canvas 188 257 1240 796 mix 1;
 #X obj 57 135 r \$1-state;
-#X obj 57 404 \$1;
-#X obj 81 382 loadbang;
 #X obj 249 300 \$1;
-#X obj 151 191 r \$1-reset;
+#X obj 403 150 r \$1-reset;
 #X msg 474 110 \; \$1-drop-bass-vol 0 \; \$1-hats-vol 0.5 \; \$1-snare-vol
 0 \; \$1-kick-vol 0 \; \$1-fx-vol 0.2 \; \$1-atmos-vol 0.06 \; \$1-drum-loop-vol
 1 \; \$1-piano-vol 1 \; \$1-noise-synth-vol 0 \; \$1-pre-drop-bass-vol
@@ -1462,14 +1461,8 @@ of a tick;
 #X obj 86 191 r \$1-tick;
 #X obj 86 215 mod 64;
 #X obj 86 238 sel 0;
-#X msg 960 314 \; \$1-build-up-type -1 \; \$1-build-up 0 \; pre-generate-track-\$1
-bang \; generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
-0 \; \$1-hats-vol 1 \; \$1-snare-vol 1 \; \$1-kick-vol 1 \; \$1-kick-1-vol
-1 \; \$1-fx-vol 0 \; \$1-atmos-vol 0 \; \$1-piano-vol 0 \; \$1-noise-synth-vol
-0 \; \$1-pre-drop-bass-vol 0 \; \$1-drop 1 \; \$1-drum-loop-vol 0 \;
-\$1-drum-loop-lop-freq 20000 \;;
 #X obj 57 159 sel pre-drop drop all-off drop-prog-1;
-#X obj 608 299 \$1;
+#X obj 634 299 \$1;
 #X obj 711 18 r \$1-build-up;
 #X obj 711 70 > 0;
 #X obj 711 40 t f f;
@@ -1486,23 +1479,17 @@ bang \; generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vo
 #X obj 780 80 sel 0;
 #X obj 780 60 change;
 #X obj 86 298 t b b b;
-#X msg 608 324 \; \$1-drop-bass-vol 1 \; \$1-hats-vol 1 \; \$1-snare-vol
+#X msg 634 324 \; \$1-drop-bass-vol 1 \; \$1-hats-vol 1 \; \$1-snare-vol
 1 \; \$1-kick-vol 1 \; \$1-kick-1-vol 1 \; \$1-fx-vol 1 \; \$1-atmos-vol
 0 \; \$1-piano-vol 0 \; \$1-noise-synth-vol 0 \; \$1-pre-drop-bass-vol
 0 \; \$1-drop 1 \; \$1-drum-loop-vol 1 \; \$1-drum-loop-lop-freq 20000
 \; \$1-toms-vol 1 \;;
-#X msg 57 430 \; generate-track-\$1 bang \; \$1-drop-bass-vol 0 \;
+#X msg 970 360 \; generate-track-\$1 bang \; \$1-drop-bass-vol 0 \;
 \$1-hats-vol 0.5 \; \$1-snare-vol 0 \; \$1-kick-vol 0 \; \$1-fx-vol
 0.2 \; \$1-atmos-vol 0.06 \; \$1-drum-loop-vol 1 \; \$1-piano-vol 1
 \; \$1-piano-lop-freq 20000 \; \$1-noise-synth-vol 0 \; \$1-pre-drop-bass-vol
 0 \; \$1-vox-vol 0.384 \; \$1-toms-vol 1 \; \$1-rev-swoop-vol 1 \;
 \$1-super-saw-vol 0 \; \$1-super-saw-arp 0 \; \$1-juno-vol 0 \;;
-#X msg 443 324 \; \$1-build-up-spigot 0 \; \$1-drop-bass-vol 0 \; \$1-hats-vol
-0 \; \$1-snare-vol 0 \; \$1-kick-vol 0 \; \$1-fx-vol 0 \; \$1-atmos-vol
-0 \; \$1-drum-loop-vol 0 \; \$1-piano-vol 0 \; \$1-build-up 0 \; \$1-noise-synth-vol
-0 \; \$1-pre-drop-bass-vol 0 \; \$1-siren-0-vol 0 \; \$1-siren-0-vol
-0 \; \$1-rev-swoop-vol 0 \; \$1-super-saw-vol 0 \; \$1-piano-del 0
-\;;
 #X msg 251 325 \; \$1-build-up 0 \; pre-generate-track-\$1 bang \;
 generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 1 \; \$1-hats-vol 1 \; \$1-snare-vol 1 \; \$1-kick-vol 1 \; \$1-fx-vol
@@ -1510,46 +1497,70 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 \$1-pre-drop-bass-vol 0 \; \$1-drop 1 \; \$1-drum-loop-vol 1 \; \$1-drum-loop-lop-freq
 20000 \; \$1-toms-vol 1 \; \$1-rev-swoop-vol 1 \; \$1-super-saw-vol
 0 \; \$1-drop-bass-note-change 1 \; \$1-drop-bass-wobbles 1 \;;
-#X connect 0 0 18 0;
-#X connect 1 0 38 0;
-#X connect 2 0 1 0;
-#X connect 3 0 39 0;
-#X connect 4 0 9 0;
-#X connect 6 0 35 0;
-#X connect 7 0 6 1;
-#X connect 8 0 7 0;
-#X connect 9 0 7 0;
-#X connect 10 0 11 0;
-#X connect 11 0 30 0;
-#X connect 12 0 29 0;
-#X connect 13 0 38 0;
-#X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 16 0 6 0;
-#X connect 18 0 1 0;
-#X connect 18 1 3 0;
-#X connect 18 2 13 0;
-#X connect 18 3 19 0;
-#X connect 19 0 36 0;
-#X connect 20 0 22 0;
-#X connect 21 0 24 0;
-#X connect 21 0 34 0;
-#X connect 22 0 21 0;
-#X connect 22 1 23 0;
-#X connect 23 0 24 1;
-#X connect 24 0 25 0;
-#X connect 25 0 26 0;
-#X connect 26 0 27 0;
-#X connect 27 0 31 0;
-#X connect 28 0 32 0;
-#X connect 29 0 32 0;
-#X connect 30 0 32 0;
-#X connect 32 0 31 0;
-#X connect 33 0 32 0;
-#X connect 34 0 33 0;
-#X connect 35 0 1 0;
-#X connect 35 1 8 0;
-#X connect 35 2 28 0;
+#X text 978 329 Old reset;
+#X obj 251 72 loadbang;
+#X obj 251 94 del 500;
+#X msg 403 172 bang;
+#X obj 49 338 \$1;
+#X msg 49 366 \; \$1-reset-timebase-soft bang \; generate-track-\$1
+bang \; \$1-build-up-spigot 0 \; \$1-drop-bass-vol 0 \; \$1-hats-vol
+0 \; \$1-snare-vol 0 \; \$1-kick-vol 0 \; \$1-fx-vol 0 \; \$1-atmos-vol
+0 \; \$1-drum-loop-vol 0 \; \$1-piano-vol 0 \; \$1-build-up 0 \; \$1-noise-synth-vol
+0 \; \$1-pre-drop-bass-vol 0 \; \$1-siren-0-vol 0 \; \$1-siren-0-vol
+0 \; \$1-rev-swoop-vol 0 \; \$1-super-saw-vol 0 \; \$1-piano-del 0
+\; \$1-state symbol pre-drop \;;
+#X msg 443 324 \; \$1-reset-timebase-soft bang \; generate-track-\$1
+bang \; \$1-build-up-spigot 0 \; \$1-drop-bass-vol 0 \; \$1-hats-vol
+0 \; \$1-snare-vol 0 \; \$1-kick-vol 0 \; \$1-fx-vol 0 \; \$1-atmos-vol
+0 \; \$1-drum-loop-vol 0 \; \$1-piano-vol 0 \; \$1-build-up 0 \; \$1-noise-synth-vol
+0 \; \$1-pre-drop-bass-vol 0 \; \$1-siren-0-vol 0 \; \$1-siren-0-vol
+0 \; \$1-rev-swoop-vol 0 \; \$1-super-saw-vol 0 \; \$1-piano-del 0
+\;;
+#X obj 779 280 s \$1-state;
+#X msg 779 236 build-up;
+#X obj 779 258 symbol;
+#X connect 0 0 15 0;
+#X connect 1 0 35 0;
+#X connect 2 0 39 0;
+#X connect 4 0 32 0;
+#X connect 5 0 4 1;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 27 0;
+#X connect 10 0 26 0;
+#X connect 11 0 42 0;
+#X connect 13 0 14 0;
+#X connect 14 0 4 0;
+#X connect 15 1 1 0;
+#X connect 15 2 11 0;
+#X connect 15 3 16 0;
+#X connect 16 0 33 0;
+#X connect 17 0 19 0;
+#X connect 18 0 21 0;
+#X connect 18 0 31 0;
+#X connect 19 0 18 0;
+#X connect 19 1 20 0;
+#X connect 20 0 21 1;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 28 0;
+#X connect 24 0 44 0;
+#X connect 25 0 29 0;
+#X connect 26 0 29 0;
+#X connect 27 0 29 0;
+#X connect 29 0 28 0;
+#X connect 30 0 29 0;
+#X connect 31 0 30 0;
+#X connect 32 1 6 0;
+#X connect 32 2 25 0;
+#X connect 37 0 38 0;
+#X connect 38 0 40 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 0;
+#X connect 44 0 45 0;
+#X connect 45 0 43 0;
 #X restore 26 149 pd mix;
 #X obj 25 376 r \$1-hats-vol;
 #X obj 25 467 r \$1-snare-vol;
@@ -1557,7 +1568,7 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 142 285 r \$1-fx-vol;
 #X obj 141 376 r \$1-atmos-vol;
 #X obj 142 497 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3900 1;
 #N canvas 597 279 449 438 drum-loop 0;
 #X obj 28 190 s_playtable2;
 #X obj 28 351 *~;
@@ -1565,7 +1576,7 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 123 321 line~;
 #X obj 28 379 throw~ track-\$1-LEFT;
 #X obj 108 399 throw~ track-\$1-RIGHT;
-#X msg 28 164 drum-loop-140-4-2;
+#X msg 28 164 drum-loop-140-4-4;
 #X obj 48 91 r generate-track-\$1;
 #X obj 123 298 inlet;
 #X obj 48 114 random 7;
@@ -1757,7 +1768,7 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X connect 36 0 2 0;
 #X restore 150 777 pd wobbles;
 #X obj 104 563 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 3;
 #X obj 27 506 bass-1;
 #X obj 218 251 unpack f f f;
 #X obj 27 334 f;
@@ -1851,7 +1862,7 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 583 338 u_dispatch \$0 3-mix;
 #X obj 27 387 + 0;
 #X obj 423 563 vsl 15 50 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4688 1;
+-1 -1 2450 1;
 #X msg 426 431 freq \$1;
 #X obj 426 409 r \$1-current-wobble-freq;
 #X obj 512 437 r \$1-current-wobble-phase;
@@ -1917,13 +1928,13 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 260 226 c_urn 3;
 #X msg 260 203 clear \, bang;
 #X msg 260 249 add2 \$1;
-#X msg 116 283 2;
+#X msg 116 283 1 0;
 #X obj 239 13 inlet;
 #X obj 315 57 moses 32;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$4;
+#X msg 116 439 \$3;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -1991,13 +2002,13 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 195 228 c_urn 3;
 #X msg 195 205 clear \, bang;
 #X msg 195 251 add2 \$1;
-#X msg 116 283 1;
+#X msg 116 283 1 2;
 #X obj 239 13 inlet;
 #X obj 315 57 moses 32;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$4;
+#X msg 116 439 \$3;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -2247,7 +2258,7 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X restore 25 355 pd drop-bass;
 #X obj 25 285 r \$1-drop-bass-vol;
 #X obj 142 593 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3900 1;
+-1 -1 0 1;
 #X obj 142 570 r \$1-pre-drop-bass-vol;
 #N canvas 460 22 686 957 pre-drop-bass 0;
 #X obj 37 704 pack f f;
@@ -2256,7 +2267,7 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 37 53 / 4;
 #X obj 37 115 mod 32;
 #N canvas 637 143 526 401 new-sequence 0;
-#X msg 37 18 2 4 0 1 4 4 4 3 4 0 4 4 3 2 4 4;
+#X msg 37 18 2 1 1 0 1 4 2 1 2 1 4 3 3 4 0 4;
 #X msg 64 214 set \, adddollar \$1;
 #N canvas 0 22 450 300 new-list 0;
 #X msg 51 79 16;
@@ -2289,14 +2300,14 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$1;
+#X msg 37 237 \$7;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 192 303 outlet;
-#X msg 192 278 \$3 \$4 \$5;
+#X msg 192 278 \$9 \$10 \$11;
 #X obj 192 160 + 1;
 #X text 305 278 Lookahead;
 #X obj 192 128 t f f f;
@@ -2351,7 +2362,7 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 37 204 sel 1;
 #X obj 80 126 r generate-track-\$1;
 #N canvas 1086 177 416 451 new-sequence 0;
-#X msg 37 18 1 4 3 3 1 1 0 0 2 3 2 4 1 2 2 0;
+#X msg 37 18 4 1 0 4 2 0 4 4 2 1 3 0 4 2 0 1;
 #X msg 64 214 set \, adddollar \$1;
 #N canvas 0 22 450 300 new-list 0;
 #X msg 51 79 16;
@@ -2384,14 +2395,14 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$1;
+#X msg 37 237 \$7;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 197 262 outlet;
-#X msg 197 238 \$2;
+#X msg 197 238 \$8;
 #X obj 197 190 + 1;
 #X msg 197 213 set \, adddollar \$1 \,;
 #X text 235 238 Lookahead;
@@ -2780,7 +2791,7 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 269 275 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 25 675 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3900 1;
+-1 -1 0 1;
 #X obj 25 652 r \$1-piano-vol;
 #X obj 269 246 r \$1-noise-synth-vol;
 #N canvas 702 145 658 561 build-up 0;
@@ -3186,10 +3197,10 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 308 364 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 618 337 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3900 1;
 #N canvas 226 482 968 401 build-up-type 0;
 #X obj 44 141 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
--1 2;
+-1 3;
 #X obj 44 162 s \$1-build-up-type;
 #X obj 44 26 r generate-track-\$1;
 #X obj 55 186 sel 1 2 3 4 5;
@@ -3922,7 +3933,7 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 659 411 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 245 183 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 3;
+-1 -1 0;
 #X obj 245 204 s \$1-build-up-type;
 #X obj 681 495 vsl 30 80 0 1 0 0 empty empty empty 0 -9 0 10 -261682
 -1 -1 7900 1;
@@ -3960,7 +3971,6 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X obj 426 278 - 30;
 #X obj 116 384 *~ 0.6;
 #X obj 185 11 r \$1-rev-swoop;
-#X msg 387 323 snare-5 3 1;
 #X msg 185 89 321.429;
 #X obj 185 115 t f f b f;
 #X floatatom 157 251 5 0 0 0 - - -, f 5;
@@ -3983,9 +3993,11 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X msg 478 87 0;
 #X obj 493 62 r \$1-reset;
 #X obj 119 442 inlet;
-#X obj 119 464 * 0.25;
-#X connect 0 0 2 0;
-#X connect 2 0 31 0;
+#X msg 387 323 snare-5 2 1;
+#X obj 49 433 *~ 0.8;
+#X obj 119 464 * 0.125;
+#X connect 0 0 50 0;
+#X connect 2 0 30 0;
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X connect 5 0 6 0;
@@ -4010,41 +4022,42 @@ generate-track-\$1 bang \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol
 #X connect 21 0 22 0;
 #X connect 21 1 22 0;
 #X connect 22 0 2 0;
-#X connect 23 0 27 0;
+#X connect 23 0 49 0;
 #X connect 24 0 23 1;
-#X connect 25 0 2 0;
-#X connect 26 0 28 0;
-#X connect 27 0 21 0;
-#X connect 28 0 29 0;
-#X connect 29 0 12 0;
-#X connect 29 1 9 0;
-#X connect 29 2 23 0;
-#X connect 29 3 24 0;
-#X connect 30 0 32 0;
+#X connect 25 0 50 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 12 0;
+#X connect 28 1 9 0;
+#X connect 28 2 23 0;
+#X connect 28 3 24 0;
+#X connect 29 0 31 0;
+#X connect 29 0 32 0;
+#X connect 30 0 1 0;
+#X connect 30 0 1 1;
 #X connect 30 0 33 0;
-#X connect 31 0 1 0;
-#X connect 31 0 1 1;
-#X connect 31 0 34 0;
-#X connect 32 0 6 1;
-#X connect 33 0 4 1;
+#X connect 31 0 6 1;
+#X connect 32 0 4 1;
+#X connect 35 0 36 0;
+#X connect 36 0 33 0;
 #X connect 36 0 37 0;
 #X connect 37 0 34 0;
-#X connect 37 0 38 0;
-#X connect 38 0 35 0;
-#X connect 38 0 35 1;
-#X connect 39 0 46 0;
-#X connect 40 0 42 0;
-#X connect 41 0 29 0;
-#X connect 42 0 41 0;
+#X connect 37 0 34 1;
+#X connect 38 0 45 0;
+#X connect 39 0 41 0;
+#X connect 40 0 28 0;
+#X connect 41 0 40 0;
+#X connect 42 0 43 0;
 #X connect 43 0 44 0;
-#X connect 44 0 45 0;
-#X connect 44 1 47 0;
-#X connect 45 0 46 1;
-#X connect 46 0 40 0;
-#X connect 47 0 46 1;
-#X connect 48 0 47 0;
-#X connect 49 0 50 0;
-#X connect 50 0 31 1;
+#X connect 43 1 46 0;
+#X connect 44 0 45 1;
+#X connect 45 0 39 0;
+#X connect 46 0 45 1;
+#X connect 47 0 46 0;
+#X connect 48 0 51 0;
+#X connect 49 0 21 0;
+#X connect 50 0 2 0;
+#X connect 51 0 30 1;
 #X restore 494 621 pd rev-swoop;
 #X obj 318 500 s \$1-build-up-length;
 #N canvas 560 60 226 194 drop-type 0;
@@ -4576,7 +4589,7 @@ bypass-build-delay \;;
 #X text 129 152 32;
 #X restore 26 212 pd drop-type;
 #X obj 25 768 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2300 1;
+-1 -1 390 1;
 #N canvas 308 47 993 704 vox 0;
 #X obj 34 621 dac~;
 #X obj 34 250 *~;
@@ -4645,8 +4658,8 @@ bypass-build-delay \;;
 #X obj 143 757 r \$1-toms-vol;
 #N canvas 308 47 638 552 toms 0;
 #X obj 34 470 *~;
-#X obj 79 406 line~;
-#X obj 79 384 inlet;
+#X obj 79 436 line~;
+#X obj 79 392 inlet;
 #X obj 34 360 s_playtable2;
 #X msg 84 306 toms 1 1 857.12 428.56;
 #X msg 107 329 toms 1 1 1285.68 428.56;
@@ -4677,10 +4690,11 @@ bypass-build-delay \;;
 #X obj 394 49 r \$1-drum-fill-2;
 #X obj 428 103 random 1;
 #X obj 34 506 output \$1 toms;
+#X obj 79 414 * 1.4;
 #X connect 0 0 32 0;
 #X connect 0 0 32 1;
 #X connect 1 0 0 1;
-#X connect 2 0 1 0;
+#X connect 2 0 33 0;
 #X connect 3 0 0 0;
 #X connect 3 1 0 0;
 #X connect 4 0 3 0;
@@ -4733,6 +4747,7 @@ bypass-build-delay \;;
 #X connect 29 0 22 0;
 #X connect 30 0 28 0;
 #X connect 31 0 26 1;
+#X connect 33 0 1 0;
 #X restore 143 828 pd toms;
 #N canvas 269 365 575 450 button 0;
 #X msg 101 15 back;
@@ -4904,8 +4919,7 @@ bypass-build-delay \;;
 #X obj 326 573 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 326 549 r \$1-super-saw-vol;
-#N canvas 254 22 676 804 super-saw-vol 0;
-#X obj 39 770 dac~;
+#N canvas 261 119 676 804 super-saw-vol 0;
 #X obj 39 748 *~;
 #X obj 54 724 line~;
 #X obj 54 680 inlet;
@@ -4929,7 +4943,7 @@ bypass-build-delay \;;
 #X msg 84 401 \$1 1000;
 #X obj 84 331 spigot;
 #X obj 39 262 t f f b;
-#X obj 117 311 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 117 311 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 84 288 spigot;
 #X obj 117 230 random 2;
@@ -4974,9 +4988,8 @@ bypass-build-delay \;;
 #X obj 258 96 sel 0 32;
 #X obj 84 379 pipe 1000;
 #X obj 39 457 line 64 20;
-#X obj 139 256 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 139 256 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 54 702 * 0.1;
 #X obj 429 206 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 282 294 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -4994,104 +5007,106 @@ bypass-build-delay \;;
 #X msg 258 118 72;
 #X msg 292 118 60;
 #X obj 39 131 + 12;
-#X connect 1 0 0 0;
+#X obj 39 770 output \$1 super-saw;
+#X obj 54 702 * 0.5;
+#X connect 0 0 82 0;
+#X connect 0 0 82 1;
 #X connect 1 0 0 1;
-#X connect 2 0 1 1;
-#X connect 3 0 69 0;
-#X connect 4 0 17 0;
-#X connect 5 0 6 0;
-#X connect 6 0 4 0;
-#X connect 6 0 8 0;
-#X connect 7 0 49 0;
-#X connect 8 0 7 0;
-#X connect 9 0 16 0;
-#X connect 10 0 5 0;
-#X connect 10 1 12 0;
-#X connect 11 0 6 1;
-#X connect 12 0 6 1;
-#X connect 13 0 10 0;
-#X connect 14 0 5 0;
-#X connect 14 1 11 0;
-#X connect 14 2 13 0;
-#X connect 15 0 55 0;
-#X connect 16 0 14 0;
-#X connect 17 0 50 0;
+#X connect 2 0 83 0;
+#X connect 3 0 16 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 5 0 7 0;
+#X connect 6 0 48 0;
+#X connect 7 0 6 0;
+#X connect 8 0 15 0;
+#X connect 9 0 4 0;
+#X connect 9 1 11 0;
+#X connect 10 0 5 1;
+#X connect 11 0 5 1;
+#X connect 12 0 9 0;
+#X connect 13 0 4 0;
+#X connect 13 1 10 0;
+#X connect 13 2 12 0;
+#X connect 14 0 54 0;
+#X connect 15 0 13 0;
+#X connect 16 0 49 0;
+#X connect 17 0 65 0;
 #X connect 18 0 66 0;
-#X connect 19 0 67 0;
-#X connect 20 0 19 0;
-#X connect 21 0 67 0;
-#X connect 22 0 18 0;
-#X connect 23 0 20 0;
-#X connect 23 1 25 0;
-#X connect 23 2 24 0;
-#X connect 24 0 22 1;
-#X connect 25 0 22 0;
-#X connect 26 0 68 0;
-#X connect 26 0 25 1;
-#X connect 27 0 16 1;
+#X connect 19 0 18 0;
+#X connect 20 0 66 0;
+#X connect 21 0 17 0;
+#X connect 22 0 19 0;
+#X connect 22 1 24 0;
+#X connect 22 2 23 0;
+#X connect 23 0 21 1;
+#X connect 24 0 21 0;
+#X connect 25 0 67 0;
+#X connect 25 0 24 1;
+#X connect 26 0 15 1;
+#X connect 28 0 27 0;
+#X connect 28 0 0 0;
 #X connect 29 0 28 0;
-#X connect 29 0 1 0;
-#X connect 30 0 29 0;
+#X connect 30 0 31 0;
 #X connect 31 0 32 0;
 #X connect 32 0 33 0;
-#X connect 33 0 34 0;
-#X connect 33 1 35 0;
-#X connect 33 2 37 0;
-#X connect 33 3 38 0;
-#X connect 34 0 36 0;
-#X connect 35 0 36 0;
-#X connect 36 0 30 0;
-#X connect 37 0 36 0;
-#X connect 38 0 36 0;
-#X connect 39 0 41 0;
-#X connect 40 0 39 0;
-#X connect 41 0 80 1;
-#X connect 42 0 80 1;
-#X connect 43 0 42 0;
-#X connect 44 0 39 1;
-#X connect 45 0 80 1;
-#X connect 46 0 45 0;
-#X connect 47 0 54 0;
-#X connect 48 0 65 0;
-#X connect 49 0 50 0;
-#X connect 50 0 1 0;
-#X connect 50 0 28 0;
+#X connect 32 1 34 0;
+#X connect 32 2 36 0;
+#X connect 32 3 37 0;
+#X connect 33 0 35 0;
+#X connect 34 0 35 0;
+#X connect 35 0 29 0;
+#X connect 36 0 35 0;
+#X connect 37 0 35 0;
+#X connect 38 0 40 0;
+#X connect 39 0 38 0;
+#X connect 40 0 78 1;
+#X connect 41 0 78 1;
+#X connect 42 0 41 0;
+#X connect 43 0 38 1;
+#X connect 44 0 78 1;
+#X connect 45 0 44 0;
+#X connect 46 0 53 0;
+#X connect 47 0 64 0;
+#X connect 48 0 49 0;
+#X connect 49 0 0 0;
+#X connect 49 0 27 0;
+#X connect 50 0 51 0;
 #X connect 51 0 52 0;
-#X connect 52 0 53 0;
-#X connect 53 0 23 0;
-#X connect 53 1 67 0;
-#X connect 54 0 48 0;
-#X connect 55 0 83 0;
-#X connect 56 0 55 1;
-#X connect 56 0 25 1;
-#X connect 57 0 56 0;
-#X connect 57 0 78 0;
-#X connect 58 0 59 0;
-#X connect 59 0 54 1;
+#X connect 52 0 22 0;
+#X connect 52 1 66 0;
+#X connect 53 0 47 0;
+#X connect 54 0 81 0;
+#X connect 55 0 54 1;
+#X connect 55 0 24 1;
+#X connect 56 0 55 0;
+#X connect 56 0 76 0;
+#X connect 57 0 58 0;
+#X connect 58 0 53 1;
+#X connect 59 0 60 0;
 #X connect 60 0 61 0;
-#X connect 61 0 62 0;
-#X connect 63 0 64 0;
-#X connect 64 0 51 1;
-#X connect 65 0 81 0;
-#X connect 65 1 82 0;
-#X connect 66 0 21 0;
-#X connect 67 0 5 0;
-#X connect 69 0 2 0;
-#X connect 70 0 61 0;
-#X connect 71 0 16 1;
-#X connect 72 0 74 1;
-#X connect 73 0 51 0;
-#X connect 74 0 73 0;
-#X connect 75 0 23 0;
-#X connect 76 0 75 1;
-#X connect 77 0 25 1;
-#X connect 78 0 79 0;
-#X connect 78 1 26 0;
-#X connect 79 0 25 1;
-#X connect 79 0 68 0;
-#X connect 81 0 74 0;
-#X connect 82 0 74 0;
-#X connect 83 0 75 0;
+#X connect 62 0 63 0;
+#X connect 63 0 50 1;
+#X connect 64 0 79 0;
+#X connect 64 1 80 0;
+#X connect 65 0 20 0;
+#X connect 66 0 4 0;
+#X connect 68 0 60 0;
+#X connect 69 0 15 1;
+#X connect 70 0 72 1;
+#X connect 71 0 50 0;
+#X connect 72 0 71 0;
+#X connect 73 0 22 0;
+#X connect 74 0 73 1;
+#X connect 75 0 24 1;
+#X connect 76 0 77 0;
+#X connect 76 1 25 0;
+#X connect 77 0 24 1;
+#X connect 77 0 67 0;
+#X connect 79 0 72 0;
+#X connect 80 0 72 0;
+#X connect 81 0 73 0;
+#X connect 83 0 1 0;
 #X restore 326 621 pd super-saw-vol;
 #X floatatom 377 195 5 0 0 0 - - -, f 5;
 #X obj 578 95 r drop;
@@ -5178,7 +5193,7 @@ bypass-build-delay \;;
 #X obj 38 497 line;
 #X obj 38 475 pack f 0;
 #N canvas 1086 177 416 451 new-sequence 0;
-#X msg 37 18 0 0 0 0 1 2 0 1 2 2 2 1 0 0 0 0;
+#X msg 37 18 0 0 0 2 0 1 0 0 0 1 1 0 0 1 2 2;
 #X msg 64 214 set \, adddollar \$1;
 #N canvas 0 22 450 300 new-list 0;
 #X msg 51 79 16;
@@ -5211,14 +5226,14 @@ bypass-build-delay \;;
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$16;
+#X msg 37 237 \$7;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 197 262 outlet;
-#X msg 197 238 \$17;
+#X msg 197 238 \$8;
 #X obj 197 190 + 1;
 #X msg 197 213 set \, adddollar \$1 \,;
 #X text 235 238 Lookahead;
@@ -5396,7 +5411,7 @@ bypass-build-delay \;;
 #X connect 23 0 9 0;
 #X restore 797 248 pd autoplay;
 #X obj 494 574 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3900 1;
 #X obj 494 550 r \$1-rev-swoop-vol;
 #N canvas 250 432 221 173 tonality 0;
 #X obj 30 26 r pre-generate-track-\$1;
@@ -5434,7 +5449,7 @@ bypass-build-delay \;;
 #X obj 471 235 list trim;
 #X obj 471 257 route 0 1 2 3 4;
 #X obj 552 192 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 2;
 #N canvas 165 616 487 309 drum-fill 0;
 #X obj 196 239 s \$1-drum-fill;
 #X obj 196 194 spigot;
@@ -6223,7 +6238,7 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X obj 85 54 chordManager \$1;
 #X obj 84 103 midiManager \$1;
 #X restore 24 65 pd midi-playback;
-#N canvas 694 128 845 699 ambient-structure 0;
+#N canvas 1176 180 845 699 ambient-structure 1;
 #X obj 42 124 spigot;
 #X obj 75 57 r \$1-state;
 #X msg 75 103 1;
@@ -6236,7 +6251,7 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X obj 601 224 list trim;
 #X obj 601 246 route 0 1 2 3 4;
 #X obj 682 181 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 2;
 #N canvas 165 616 487 309 drum-fill 0;
 #X obj 196 239 s \$1-drum-fill;
 #X obj 196 194 spigot;
@@ -6350,7 +6365,7 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X msg 217 368 0;
 #X msg 249 369 0 \, 1 1;
 #X obj 224 323 spigot;
-#X obj 257 280 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 257 280 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 285 257 0;
 #X msg 257 257 1;
@@ -6470,7 +6485,7 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X msg 369 324 0;
 #X msg 401 325 0 \, 1 1;
 #X obj 376 279 spigot;
-#X obj 409 236 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 409 236 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 437 213 0;
 #X msg 409 213 1;
@@ -6673,12 +6688,11 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X obj 262 550 \$1;
 #X msg 242 492 \; \$1-kick-vol 1 \; \$1-snare-vol 1 \;;
 #X obj 42 299 moses 2;
-#X obj 109 299 moses 2;
 #X obj 412 410 \$1;
 #X obj 443 470 \$1;
 #X msg 412 344 bang;
 #X obj 459 531 \$1;
-#X obj 219 302 moses 5;
+#X obj 212 315 moses 5;
 #X obj 412 366 f;
 #X obj 439 366 + 1;
 #X msg 360 351 0;
@@ -6689,10 +6703,12 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X msg 443 492 \; \$1-random-verse-vox bang \;;
 #X msg 459 553 \; generate-track-\$1 bang \; \$1-reset-timebase-soft
 bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
-#X obj 412 388 sel 0 1 2 4;
 #X floatatom 139 163 5 0 0 0 - - -, f 5;
 #X floatatom 266 266 5 0 0 0 - - -, f 5;
 #X msg 262 572 \; \$1-super-saw-vol 0.4 \;;
+#X obj 412 388 sel 0 1 2 4 5;
+#X obj 35 483 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 25 0;
 #X connect 1 0 26 0;
 #X connect 2 0 0 1;
@@ -6718,14 +6734,14 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X connect 22 0 21 0;
 #X connect 24 0 11 0;
 #X connect 25 0 31 0;
-#X connect 25 0 72 0;
+#X connect 25 0 70 0;
 #X connect 26 0 2 0;
 #X connect 26 1 3 0;
 #X connect 27 0 28 0;
 #X connect 28 0 29 0;
 #X connect 29 0 30 0;
 #X connect 29 0 56 0;
-#X connect 29 0 73 0;
+#X connect 29 0 71 0;
 #X connect 30 0 29 1;
 #X connect 31 0 27 0;
 #X connect 31 1 32 0;
@@ -6738,7 +6754,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X connect 35 1 44 0;
 #X connect 36 0 44 0;
 #X connect 36 0 48 0;
-#X connect 36 0 65 0;
+#X connect 36 0 64 0;
 #X connect 37 0 38 0;
 #X connect 39 0 52 0;
 #X connect 40 0 43 0;
@@ -6755,26 +6771,26 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X connect 51 0 37 0;
 #X connect 51 1 39 0;
 #X connect 51 2 40 0;
-#X connect 54 0 74 0;
+#X connect 54 0 72 0;
 #X connect 56 0 34 0;
-#X connect 56 1 57 0;
-#X connect 57 1 62 0;
+#X connect 56 1 61 0;
+#X connect 57 0 67 0;
 #X connect 58 0 68 0;
-#X connect 59 0 69 0;
-#X connect 60 0 63 0;
-#X connect 60 0 66 0;
-#X connect 61 0 70 0;
-#X connect 62 0 49 0;
-#X connect 62 1 60 0;
-#X connect 63 0 64 0;
-#X connect 63 0 67 0;
-#X connect 63 0 71 0;
-#X connect 64 0 63 1;
-#X connect 65 0 63 1;
-#X connect 71 0 58 0;
-#X connect 71 1 58 0;
-#X connect 71 2 59 0;
-#X connect 71 3 61 0;
+#X connect 59 0 62 0;
+#X connect 59 0 65 0;
+#X connect 60 0 69 0;
+#X connect 61 0 49 0;
+#X connect 61 1 59 0;
+#X connect 62 0 63 0;
+#X connect 62 0 66 0;
+#X connect 62 0 73 0;
+#X connect 63 0 62 1;
+#X connect 64 0 62 1;
+#X connect 73 0 57 0;
+#X connect 73 1 57 0;
+#X connect 73 2 58 0;
+#X connect 73 4 60 0;
+#X connect 74 0 39 0;
 #X restore 26 98 pd ambient-structure;
 #N canvas 11 219 648 394 plink 0;
 #X obj 87 136 osc~;
@@ -6860,7 +6876,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X restore 401 351 pd plink;
 #X obj 577 784 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 780 1;
-#N canvas 690 202 668 698 vox 1;
+#N canvas 33 172 668 698 vox 0;
 #X obj 34 651 dac~;
 #X obj 34 360 *~;
 #X obj 61 333 line~;
@@ -6884,7 +6900,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X obj 177 603 delread~ \$1-reggae-vox-del-c 428.56;
 #X obj 115 539 delread~ \$1-reggae-vox-del-l 857.12;
 #X obj 122 336 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3900 1;
+-1 -1 2340 1;
 #X obj 470 40 mod 256;
 #X obj 470 62 sel 252;
 #X obj 130 391 r \$1-reggae-vox-del;
@@ -6982,6 +6998,8 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X obj 813 380 siren-down \$1 2;
 #X obj 663 798 loadbang;
 #X msg 663 820 0.2;
+#X obj 57 772 loadbang;
+#X msg 57 794 0.1;
 #X connect 4 0 23 0;
 #X connect 6 0 1 0;
 #X connect 8 0 0 0;
@@ -7068,3 +7086,5 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X connect 131 0 129 0;
 #X connect 134 0 135 0;
 #X connect 135 0 129 0;
+#X connect 136 0 137 0;
+#X connect 137 0 70 0;
