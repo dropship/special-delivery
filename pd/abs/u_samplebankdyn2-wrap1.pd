@@ -1,0 +1,6 @@
+#N canvas 389 246 296 223 10;
+#X obj 39 43 u_samplebankdyn2 \$1-\$2X01.aif;
+#X obj 39 83 u_samplebankdyn2 \$1-\$2X03.aif;
+#X obj 39 63 u_samplebankdyn2 \$1-\$2X02.aif;
+#X obj 39 103 u_samplebankdyn2 \$1-\$2X04.aif;
+#X obj 39 123 u_samplebankdyn2 \$1-\$2X05.aif;
