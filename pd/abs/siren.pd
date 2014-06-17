@@ -29,16 +29,16 @@
 #X obj 113 296 *~ 0.2;
 #X obj 145 360 *~ 0.006;
 #X obj 84 181 *~ 487;
-#X obj 146 655 delwrite~ \$0-siren-del 1000;
-#X obj 146 677 delread~ \$0-siren-del 214.2;
+#X obj 116 635 delwrite~ \$0-siren-del 1000;
+#X obj 116 657 delread~ \$0-siren-del 214.2;
 #X obj 64 703 *~ 1;
-#X obj 101 665 *~ 0.1;
+#X obj 71 645 *~ 0.1;
 #X obj 84 59 t f f;
 #X obj 225 93 - 10;
 #X msg 225 115 0 \, 1 10 0 \, 0 10 \$1;
 #X obj 84 36 f 900;
 #X obj 159 735 line~;
-#X obj 159 709 inlet;
+#X obj 159 691 inlet;
 #X obj 64 761 *~;
 #X obj 144 761 *~;
 #X obj 64 789 throw~ track-\$1-LEFT;
@@ -60,6 +60,7 @@
 #X obj 285 804 *~ 0.05;
 #X obj 39 38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X obj 159 713 * 0.6;
 #X connect 0 0 1 0;
 #X connect 1 0 29 0;
 #X connect 2 0 3 0;
@@ -114,7 +115,7 @@
 #X connect 37 0 50 0;
 #X connect 38 0 40 1;
 #X connect 38 0 41 1;
-#X connect 39 0 38 0;
+#X connect 39 0 60 0;
 #X connect 40 0 42 0;
 #X connect 41 0 43 0;
 #X connect 44 0 0 0;
@@ -131,3 +132,4 @@
 #X connect 58 0 55 0;
 #X connect 58 0 55 1;
 #X connect 59 0 37 0;
+#X connect 60 0 38 0;

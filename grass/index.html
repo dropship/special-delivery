@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+		
+		<link rel='stylesheet' href='css/bootstrap.css' type='text/css'/>
+		<link rel='stylesheet' href='css/grass.css' type='text/css'/>
+
+		<title>Anita's Dropship</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script type="text/javascript">
+
+			var controlURL = "http://93.96.76.247:8080/control"
+
+			$(document).ready(function() {
+
+				$('.buttons a').click(function() {
+					var buttonValue = $(this).attr('id');
+					console.log('making post');
+					$(this).toggleClass('active');
+					$.ajax({
+			          type: 'POST',
+			          url: controlURL,
+			          data: "{\"action\":\"control\", \"messages\":{\"fromGrass\":[\""+buttonValue+"\"]}}",
+			          dataType: "json"
+			        });
+
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="js/bootstrap.min.js"></script>
+
+	    <div class="container">
+	      <div class="header">
+	        <ul class="nav nav-pills pull-right">
+	          <!-- <li class="active"><a href="#">Home</a></li> -->
+	          <!-- <li><a href="#">About</a></li> -->
+	          <!-- <li><a href="#">Contact</a></li> -->
+	        </ul>
+	        <h3 class="text-muted">Anita's Dropship</h3>
+	      </div>
+
+	      <div class="jumbotron">
+			  <div class="row buttons">
+
+		        <div class="col-lg-8">
+		          <!-- <h4>Generative Reactive Audio Streaming Server</h4>
+		          <p>GRASS is a new way of creating and streaming fully reactive audio.</p>
+
+		          <h4>The Stream</h4>
+		          <p>Interact with this soundscape via the buttons on the right. Changes take about 5 seconds to be audible.</p> -->
+		          
+		          <audio id="stream1" controls autoplay preload="auto">
+					  <source src="http://93.96.76.247:8080/stream">
+					  Your browser does not support the audio element.
+				  </audio>
+				  
+
+		        </div>
+
+		        <div class="col-lg-4">
+		          <h4>Drip frequency</h4>
+	    			<a class="btn btn-success" id="build" href="#" role="button">Start Build</a>
+	    			<a class="btn btn-success" id="drop" href="#" role="button">Drop</a>
+	    			<a class="btn btn-success" id="reset" href="#" role="button">Reset</a>
+		        </div>
+		      </div>
+	      </div>
+	      <script>
+			myStream=document.getElementById("stream1");
+			function getFirstBuffRange()
+			  { 
+			  alert("Start: " + myStream.buffered.start(0) + " End: "  + myStream.buffered.end(0));
+			  } 
+		  </script> 
+	      
+
+	      <div class="footer">
+	        <p>&copy; Reactify Music & Section6 2014</p>
+	      </div>
+
+	    </div> <!-- /container -->
+	</body>
+</html>
