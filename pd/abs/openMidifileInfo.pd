@@ -1,4 +1,4 @@
-#N canvas 568 34 489 793 10;
+#N canvas 821 43 489 793 10;
 #N canvas 156 58 895 770 loadMidiFileList 0;
 #X msg 33 78 ../resources/midi/\$1-info.txt;
 #X obj 33 48 symbol \$2;
@@ -144,6 +144,7 @@ chords 90 2 90_2_4.mid \, chords 90 3 90_3_2.mid \, chords 90 4 90_4_4.mid
 #X obj 43 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X floatatom 244 597 5 0 0 0 - - -, f 5;
+#X obj 353 80 r new-\$2-midiFile;
 #X connect 0 0 14 0;
 #X connect 0 1 17 0;
 #X connect 1 0 0 0;
@@ -178,3 +179,4 @@ chords 90 2 90_2_4.mid \, chords 90 3 90_3_2.mid \, chords 90 4 90_4_4.mid
 #X connect 30 0 28 0;
 #X connect 31 0 28 0;
 #X connect 32 0 0 0;
+#X connect 34 0 28 0;
