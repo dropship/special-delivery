@@ -197,11 +197,10 @@
 maj7#11 0 \, 5 0 minb6 -1 -4 maj7#11 -1 5 min -1 1 maj7#11 -1 \, 6
 0 minb6 -1 -4 maj7#11 -1 5 min -1 1 7#11 -1 \, 7 5 min -1 -4 maj7#11
 -1 -2 dom7 -1 0 minb6 -1 \, 8 0 minb6 -1 -4 maj7#11 -1 -2 7#11 -1 0
-maj -1 \, 9 0 min -1 -2 maj -1 0 min -1 -5 7b913 -1 \, 10 0 minb6 -1
--2 dom7 -1 -3 min -1 -5 7alt -1 \, 11 0 minb6 -1 3 dom7 -1 -4 maj -1
-1 7#11 -1 \, 12 0 min -1 2 min -1 0 min 3 2 minb2 5 \, 13 0 min -1
--5 minb6 -1 -2 maj -1 5 dom7 -1 \, 14 0 minb6 -1 3 maj -1 -4 maj7#11
--1 -2 dom7 -1 \,;
+maj -1 \, 9 0 minb6 -1 -2 dom7 -1 -3 min -1 -5 7alt -1 \, 10 0 minb6
+-1 3 dom7 -1 -4 maj -1 1 7#11 -1 \, 11 0 min -1 2 min -1 0 min 3 2
+minb2 5 \, 12 0 min -1 -5 minb6 -1 -2 maj -1 5 dom7 -1 \, 13 0 minb6
+-1 3 maj -1 -4 maj7#11 -1 -2 dom7 -1 \,;
 #X obj 265 456 v \$1-CHORDS-progressionIndex;
 #X obj 265 486 *;
 #X obj 265 516 + 0.4999;
@@ -363,7 +362,7 @@ Index;
 #X connect 5 1 3 0;
 #X connect 5 2 1 0;
 #X restore 459 657 pd 16thBottomLeftOfMiddleSV -> Bass Parameters;
-#N canvas 542 246 600 373 16thBottomRightSVRGB 1;
+#N canvas 542 246 600 373 16thBottomRightSVRGB 0;
 #X obj 42 39 inlet;
 #X obj 339 95 outlet otherMessages;
 #X text 86 39 // Bottom-right 16th;
@@ -429,6 +428,10 @@ Index;
 #X msg 41 124 140;
 #X obj 529 488 random 1;
 #X obj 529 511 / 1;
+#X obj 662 421 r \$1-new-chord-sequence;
+#X obj 662 443 t b b;
+#X obj 719 396 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 1 0;
 #X connect 1 0 17 1;
 #X connect 2 0 3 0;
@@ -485,3 +488,7 @@ Index;
 #X connect 65 0 29 0;
 #X connect 66 0 67 0;
 #X connect 67 0 46 1;
+#X connect 68 0 69 0;
+#X connect 69 0 41 0;
+#X connect 69 1 56 0;
+#X connect 70 0 69 0;
