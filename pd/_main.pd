@@ -1,4 +1,4 @@
-#N canvas 310 192 365 278 10;
+#N canvas 177 353 365 278 10;
 #X declare -path abs;
 #X declare -path audio;
 #X declare -path rj;
@@ -25,7 +25,8 @@
 #X declare -path audio/vox/pon-de-floor;
 #X declare -path libs/cyclone;
 #X declare -path audio/synths/Electric-Guitar-Muted;
-#N canvas 534 234 834 400 io 0;
+#X declare -path audio/vox/reggae-vox;
+#N canvas 554 289 834 400 io 0;
 #X obj 34 47 catch~ LEFT;
 #X obj 134 47 catch~ RIGHT;
 #X obj 34 292 dac~;
@@ -136,12 +137,12 @@
 #X obj 62 317 declare -path resources/midi/chords;
 #X obj 62 337 declare -path resources/midi/drums;
 #X obj 62 357 declare -path resources/midi/voices;
-#X obj 63 598 loadbang;
-#X obj 63 642 v \$0-TIMEBASE-BPM;
-#X msg 63 620 140;
-#X msg 177 619 MINOR;
-#X obj 177 641 symbol;
-#X obj 177 664 s \$0-CHORDS-maj/min;
+#X obj 63 638 loadbang;
+#X obj 63 682 v \$0-TIMEBASE-BPM;
+#X msg 63 660 140;
+#X msg 177 659 MINOR;
+#X obj 177 681 symbol;
+#X obj 177 704 s \$0-CHORDS-maj/min;
 #X obj 62 377 declare -path libs/rm;
 #X obj 62 417 declare -path audio/waveforms;
 #X obj 62 257 declare -path audio/fx/rises;
@@ -154,7 +155,8 @@
 #X obj 62 497 declare -path audio/drums/crashes;
 #X obj 62 517 declare -path audio/vox/pon-de-floor;
 #X obj 62 397 declare -path libs/cyclone;
-#X obj 62 537 declare -path audio/synths/Electric-Guitar-Muted;
+#X obj 62 557 declare -path audio/synths/Electric-Guitar-Muted;
+#X obj 62 537 declare -path audio/vox/reggae-vox;
 #X connect 13 0 15 0;
 #X connect 13 0 16 0;
 #X connect 15 0 14 0;
@@ -287,7 +289,7 @@
 #X restore 38 609 pd huge-wave-forms;
 #X obj 37 269 u_samplebank ride-1 ride-1.wav;
 #X obj 37 329 u_samplebank square MachineDrumSquareC.wav;
-#N canvas 1074 156 450 300 vox 0;
+#N canvas 126 243 910 499 vox 0;
 #X obj 50 114 u_samplebank2 da-roof-is-on-fire da-roof-is-on-fire.wav
 ;
 #X obj 50 44 u_samplebank2 lets-drop lets-drop.wav;
@@ -299,6 +301,16 @@
 #X obj 50 234 u_samplebank2 verse-2 verse-2.wav;
 #X obj 50 254 u_samplebank2 verse-3 verse-3.wav;
 #X obj 50 154 u_samplebank2 paroboroborobo paroboroborobo.wav;
+#X obj 438 109 u_samplebank2 Phrase1-0-C Phrase1-0-C.wav;
+#X obj 438 129 u_samplebank2 Phrase2-4-C Phrase2-4-C.wav;
+#X obj 438 149 u_samplebank2 Phrase3-4-C Phrase3-4-C.wav;
+#X obj 438 169 u_samplebank2 Phrase4-8-C Phrase4-8-C.wav;
+#X obj 438 189 u_samplebank2 Phrase5-0-C Phrase5-0-C.wav;
+#X obj 438 209 u_samplebank2 Phrase6-0-C Phrase6-0-C.wav;
+#X obj 438 229 u_samplebank2 Phrase7-0-C Phrase7-0-C.wav;
+#X obj 438 259 u_samplebank2 Phrase10-8-Em Phrase10-8-Em.wav;
+#X obj 438 279 u_samplebank2 Phrase11-0-Em Phrase11-0-Em.wav;
+#X obj 438 299 u_samplebank2 Phrase12-0-Em Phrase12-0-Em.wav;
 #X restore 38 489 pd vox;
 #N canvas 0 22 485 804 snares 0;
 #X obj 100 150 u_samplebank2 snare-6 snare-6.wav;
@@ -446,8 +458,8 @@
 #X restore 131 50 pd write-patterns;
 #X text 133 15 Pattern storage;
 #X restore 25 124 pd drums-patterns;
-#X obj 206 32 loadbang;
-#X msg 206 55 \; pd dsp 1 \;;
+#X obj 206 30 loadbang;
+#X msg 206 53 \; pd dsp 1 \;;
 #X obj 25 206 track 0 \$0;
 #N canvas 201 538 450 300 events 0;
 #X obj 95 116 s event;

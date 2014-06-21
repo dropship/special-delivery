@@ -1,4 +1,4 @@
-#N canvas 154 55 1051 758 10;
+#N canvas 117 407 1051 758 10;
 #X obj 551 329 + 1;
 #X obj 551 352 mod 4;
 #X obj 578 297 list length;
@@ -195,14 +195,13 @@
 0 minb6 -1 0 minb6 -1 0 minb6 -1 0 minb6 -1 \, 3 0 minb6 -1 -4 maj7#11
 -1 5 min -1 -5 minb2 -1 \, 4 0 minb6 -1 -4 maj7#11 0 0 minb6 -1 -4
 maj7#11 0 \, 5 0 minb6 -1 -4 maj7#11 -1 5 min -1 1 maj7#11 -1 \, 6
-0 minb6 -1 -4 maj7#11 -1 5 min -1 1 7#11 -1 \, 7 0 minb6 -1 4 maj -1
--4 maj7#11 -1 -5 7b9b13 -1 \, 8 5 min -1 -4 maj7#11 -1 -2 dom7 -1 0
-minb6 -1 \, 9 0 minb6 -1 -4 maj7#11 -1 -2 7#11 -1 0 maj -1 \, 10 0
-min -1 -2 maj -1 0 min -1 -5 7b913 -1 \, 11 0 minb6 -1 -2 dom7 -1 -3
-min -1 -5 7alt -1 \, 12 0 minb6 -1 3 dom7 -1 -4 maj -1 1 7#11 -1 \,
-13 0 min -1 2 min -1 0 min 3 2 minb2 5 \, 14 0 min -1 -5 minb6 -1 -2
-maj -1 5 dom7 -1 \, 15 0 minb6 -1 3 maj -1 -4 maj7#11 -1 -2 dom7 -1
-\,;
+0 minb6 -1 -4 maj7#11 -1 5 min -1 1 7#11 -1 \, 7 5 min -1 -4 maj7#11
+-1 -2 dom7 -1 0 minb6 -1 \, 8 0 minb6 -1 -4 maj7#11 -1 -2 7#11 -1 0
+maj -1 \, 9 0 min -1 -2 maj -1 0 min -1 -5 7b913 -1 \, 10 0 minb6 -1
+-2 dom7 -1 -3 min -1 -5 7alt -1 \, 11 0 minb6 -1 3 dom7 -1 -4 maj -1
+1 7#11 -1 \, 12 0 min -1 2 min -1 0 min 3 2 minb2 5 \, 13 0 min -1
+-5 minb6 -1 -2 maj -1 5 dom7 -1 \, 14 0 minb6 -1 3 maj -1 -4 maj7#11
+-1 -2 dom7 -1 \,;
 #X obj 265 456 v \$1-CHORDS-progressionIndex;
 #X obj 265 486 *;
 #X obj 265 516 + 0.4999;
@@ -286,7 +285,7 @@ maj -1 5 dom7 -1 \, 15 0 minb6 -1 3 maj -1 -4 maj7#11 -1 -2 dom7 -1
 #X obj 176 572 print progressionIndex;
 #X obj 176 550 v \$1-CHORDS-progressionIndex;
 #X obj 42 517 t b b b;
-#N canvas 262 107 353 375 OverallSaturation 0;
+#N canvas 302 57 353 375 OverallSaturation 0;
 #X obj 42 39 inlet;
 #X obj 117 100 outlet otherMessages;
 #X obj 42 68 route 1-0-0-S;
@@ -300,8 +299,10 @@ maj -1 5 dom7 -1 \, 15 0 minb6 -1 3 maj -1 -4 maj7#11 -1 -2 dom7 -1
 #X obj 42 225 +;
 #X floatatom 76 224 5 0 0 0 - - -, f 5;
 #X obj 57 304 s \$1-key-centre;
-#X obj 42 277 + 5;
 #X obj 57 251 r \$1-vox-key;
+#X floatatom 82 277 5 0 0 0 - - -, f 5;
+#X obj 42 277 + 0;
+#X floatatom 149 233 5 0 0 0 - - -, f 5;
 #X connect 0 0 2 0;
 #X connect 2 0 4 0;
 #X connect 2 1 1 0;
@@ -312,10 +313,12 @@ maj -1 5 dom7 -1 \, 15 0 minb6 -1 3 maj -1 -4 maj7#11 -1 -2 dom7 -1
 #X connect 8 0 9 0;
 #X connect 9 0 10 1;
 #X connect 10 0 11 0;
-#X connect 10 0 13 0;
-#X connect 13 0 6 0;
-#X connect 13 0 12 0;
-#X connect 14 0 13 1;
+#X connect 10 0 15 0;
+#X connect 13 0 14 0;
+#X connect 13 0 15 1;
+#X connect 15 0 6 0;
+#X connect 15 0 12 0;
+#X connect 16 0 15 1;
 #X restore 459 624 pd OverallSaturation -> Key Center;
 #N canvas 652 246 370 471 OverallBrightness 0;
 #X obj 42 39 inlet;
