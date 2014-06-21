@@ -1,0 +1,7 @@
+audio
+abs/convertToBassNote.pd
+abs/convertToChord.pd
+resources/midi/bass/_seq_bass.pd
+resources/midi/chords/_seq_chords.pd
+resources/midi/drums/_seq_drums.pd
+resources/midi/voices/_seq_voices.pd
