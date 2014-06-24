@@ -300,8 +300,8 @@ minb2 5 \, 12 0 min -1 -5 minb6 -1 -2 maj -1 5 dom7 -1 \, 13 0 minb6
 #X obj 57 304 s \$1-key-centre;
 #X obj 57 251 r \$1-vox-key;
 #X floatatom 82 277 5 0 0 0 - - -, f 5;
-#X obj 42 277 + 0;
 #X floatatom 149 233 5 0 0 0 - - -, f 5;
+#X obj 42 277 + 5;
 #X connect 0 0 2 0;
 #X connect 2 0 4 0;
 #X connect 2 1 1 0;
@@ -312,12 +312,12 @@ minb2 5 \, 12 0 min -1 -5 minb6 -1 -2 maj -1 5 dom7 -1 \, 13 0 minb6
 #X connect 8 0 9 0;
 #X connect 9 0 10 1;
 #X connect 10 0 11 0;
-#X connect 10 0 15 0;
+#X connect 10 0 16 0;
 #X connect 13 0 14 0;
-#X connect 13 0 15 1;
-#X connect 15 0 6 0;
-#X connect 15 0 12 0;
-#X connect 16 0 15 1;
+#X connect 13 0 16 1;
+#X connect 15 0 16 1;
+#X connect 16 0 6 0;
+#X connect 16 0 12 0;
 #X restore 459 624 pd OverallSaturation -> Key Center;
 #N canvas 652 246 370 471 OverallBrightness 0;
 #X obj 42 39 inlet;

@@ -1,4 +1,4 @@
-#N canvas 126 395 365 278 10;
+#N canvas 549 103 365 278 10;
 #X declare -path abs;
 #X declare -path audio;
 #X declare -path rj;
@@ -26,7 +26,7 @@
 #X declare -path libs/cyclone;
 #X declare -path audio/synths/Electric-Guitar-Muted;
 #X declare -path audio/vox/reggae-vox;
-#N canvas 554 289 834 400 io 0;
+#N canvas 180 443 834 400 io 0;
 #X obj 34 47 catch~ LEFT;
 #X obj 134 47 catch~ RIGHT;
 #X obj 34 292 dac~;
@@ -163,7 +163,7 @@
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
 #X restore 25 29 pd init;
-#N canvas 849 58 704 672 samplebanks 0;
+#N canvas 159 66 704 672 samplebanks 0;
 #X obj 37 299 synth-load ARP-Poly-Lead;
 #X obj 342 182 print;
 #X msg 305 189 info;
@@ -289,7 +289,7 @@
 #X restore 38 609 pd huge-wave-forms;
 #X obj 37 269 u_samplebank ride-1 ride-1.wav;
 #X obj 37 329 u_samplebank square MachineDrumSquareC.wav;
-#N canvas 126 243 910 499 vox 0;
+#N canvas 22 22 908 569 vox 0;
 #X obj 50 114 u_samplebank2 da-roof-is-on-fire da-roof-is-on-fire.wav
 ;
 #X obj 50 44 u_samplebank2 lets-drop lets-drop.wav;
@@ -308,9 +308,15 @@
 #X obj 438 189 u_samplebank2 Phrase5-0-C Phrase5-0-C.wav;
 #X obj 438 209 u_samplebank2 Phrase6-0-C Phrase6-0-C.wav;
 #X obj 438 229 u_samplebank2 Phrase7-0-C Phrase7-0-C.wav;
-#X obj 438 259 u_samplebank2 Phrase10-8-Em Phrase10-8-Em.wav;
-#X obj 438 279 u_samplebank2 Phrase11-0-Em Phrase11-0-Em.wav;
-#X obj 438 299 u_samplebank2 Phrase12-0-Em Phrase12-0-Em.wav;
+#X obj 438 329 u_samplebank2 Phrase29a-0-F Phrase29a-0-F.wav;
+#X obj 438 349 u_samplebank2 Phrase29b-0-F Phrase29b-0-F.wav;
+#X obj 438 259 u_samplebank2 Phrase10-8-F Phrase10-8-F.wav;
+#X obj 438 279 u_samplebank2 Phrase11-0-F Phrase11-0-F.wav;
+#X obj 438 299 u_samplebank2 Phrase12-0-F Phrase12-0-F.wav;
+#X obj 438 389 u_samplebank2 Phrase16-8-F Phrase16-8-F.wav;
+#X obj 438 439 u_samplebank2 Phrase14-8-F Phrase14-8-F.wav;
+#X obj 438 459 u_samplebank2 Phrase15-8-F Phrase15-8-F.wav;
+#X obj 438 419 u_samplebank2 Phrase13-4-F Phrase13-4-F.wav;
 #X restore 38 489 pd vox;
 #N canvas 0 22 485 804 snares 0;
 #X obj 100 150 u_samplebank2 snare-6 snare-6.wav;
