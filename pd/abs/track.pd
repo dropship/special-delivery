@@ -68,7 +68,7 @@
 #N canvas 0 22 325 310 trap 0;
 #X msg 19 245 1;
 #X obj 48 221 spigot;
-#X obj 81 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 81 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 98 221 spigot;
 #X obj 131 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -371,7 +371,7 @@
 #X connect 34 0 31 0;
 #X connect 35 0 1 0;
 #X restore 396 312 pd synth;
-#N canvas 244 32 623 1028 piano 0;
+#N canvas 244 32 623 1028 piano 1;
 #X obj 33 52 s_samplersynth \$0 ped_mf 60 36 wav 1;
 #X obj 34 160 r notes;
 #X obj 34 282 list prepend;
@@ -954,7 +954,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X connect 71 0 72 0;
 #X restore 25 632 pd kick;
 #X obj 25 399 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3900 1;
+-1 -1 0 1;
 #N canvas 744 22 618 804 timebase 0;
 #X obj 34 173 loadbang;
 #X obj 34 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -1248,7 +1248,7 @@ of a tick;
 #N canvas 772 124 447 330 new-sequence 0;
 #X msg 48 -8 1 1 0 1 0 0 0 0 1 1 0 0 0 1 1 0;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$7;
+#X msg 48 191 \$2;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -1311,7 +1311,7 @@ of a tick;
 #N canvas 772 124 447 330 new-sequence 0;
 #X msg 48 -8 1 2 2 2 3 3 3 1 2 2 0 2 3 0 1 2;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$7;
+#X msg 48 191 \$2;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -1505,7 +1505,7 @@ of a tick;
 #X obj 208 144 random 1;
 #X obj 208 166 + 1;
 #X msg 208 188 set reggae-drums-140-\$1 4;
-#X msg 28 214 drum-loop-140-4-1;
+#X msg 28 214 drum-loop-140-4-5;
 #X obj 165 34 r \$1-ambient-genre;
 #X obj 165 56 symbol;
 #X obj 165 79 sel dubstep dub;
@@ -1695,7 +1695,7 @@ of a tick;
 #X connect 36 0 2 0;
 #X restore 150 777 pd wobbles;
 #X obj 104 563 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 3;
+-1 -1 2;
 #X obj 27 506 bass-1;
 #X obj 218 251 unpack f f f;
 #X obj 27 334 f;
@@ -1862,7 +1862,7 @@ of a tick;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$2;
+#X msg 116 439 \$7;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -1937,7 +1937,7 @@ of a tick;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$2;
+#X msg 116 439 \$7;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -2229,14 +2229,14 @@ of a tick;
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$5;
+#X msg 37 237 \$12;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 192 303 outlet;
-#X msg 192 278 \$7 \$8 \$9;
+#X msg 192 278 \$14 \$15 \$16;
 #X obj 192 160 + 1;
 #X text 305 278 Lookahead;
 #X obj 192 128 t f f f;
@@ -2324,14 +2324,14 @@ of a tick;
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$5;
+#X msg 37 237 \$12;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 197 262 outlet;
-#X msg 197 238 \$6;
+#X msg 197 238 \$13;
 #X obj 197 190 + 1;
 #X msg 197 213 set \, adddollar \$1 \,;
 #X text 235 238 Lookahead;
@@ -5153,14 +5153,14 @@ bypass-build-delay \;;
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$5;
+#X msg 37 237 \$12;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 197 262 outlet;
-#X msg 197 238 \$6;
+#X msg 197 238 \$13;
 #X obj 197 190 + 1;
 #X msg 197 213 set \, adddollar \$1 \,;
 #X text 235 238 Lookahead;
@@ -6002,7 +6002,7 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X obj 120 280 * 9900;
 #X obj 120 302 + 100;
 #X obj 120 58 vsl 30 80 0 1 0 0 empty empty empty 0 -9 0 10 -261682
--1 -1 0 1;
+-1 -1 7900 1;
 #X obj 120 256 pow 2;
 #X obj 148 405 + 1;
 #X obj 71 454 e_tremolo2;
@@ -6259,7 +6259,7 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X obj 11 14 chordManager \$1;
 #X obj 11 34 midiManager \$1;
 #X restore 24 65 pd midi-playback;
-#N canvas 325 296 828 377 ambient-structure 0;
+#N canvas 325 296 828 377 ambient-structure 1;
 #X obj 42 124 spigot;
 #X obj 75 57 r \$1-state;
 #X msg 75 103 1;
@@ -6679,7 +6679,7 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X obj 682 158 random 4;
 #X obj 42 147 + 0;
 #X obj 75 81 sel pre-drop;
-#N canvas 220 45 1428 879 dubstep 0;
+#N canvas 220 45 1428 879 dubstep 1;
 #X obj 42 113 mod 256;
 #X obj 42 135 sel 0;
 #X obj 42 157 f;
@@ -6825,7 +6825,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X msg 263 220 \; \$1-new-chord-sequence bang \;;
 #X msg 1023 610 \; \$1-kick-vol 0 \; \$1-snare-vol 0 \;;
 #X obj 145 209 nbx 2 40 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 30
--262130 -1 -1 3 256;
+-262130 -1 -1 1 256;
 #X obj 492 347 \$1;
 #X obj 241 407 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -6904,9 +6904,6 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X msg 492 369 \; \$1-kick-vol 0 \; \$1-snare-vol 0 \; \$1-drum-loop-vol
 0 \; \$1-hats-vol 0 \;;
 #X msg 599 627 \; \$1-sine-key-release 50 \, 1000 10000 \;;
-#X msg 642 373 \; \$1-kick-vol 1 \; \$1-snare-vol 1 \; \$1-drum-loop-vol
-1 \; \$1-hats-vol 1 \; \$1-piano-del 0 \; \$1-sine-key-release 50 \;
-\$1-sine-key-shape 0 \;;
 #X obj 639 725 \$1;
 #X obj 580 527 sel 0 1 2 3;
 #X obj 580 475 t b b b;
@@ -6915,6 +6912,9 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X msg 442 118 8;
 #X obj 580 497 c_urn 4;
 #X msg 639 747 \; \$1-noise-riser-sweep 0 \, 1 13714.3;
+#X msg 642 373 \; \$1-kick-vol 1 \; \$1-snare-vol 1 \; \$1-drum-loop-vol
+1 \; \$1-hats-vol 1 \; \$1-piano-del 0 \; \$1-sine-key-release 50 \;
+\$1-sine-key-shape 0 50 \;;
 #X connect 0 0 1 0;
 #X connect 0 0 56 0;
 #X connect 1 0 2 0;
@@ -7015,13 +7015,13 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X connect 70 0 71 0;
 #X connect 71 0 72 0;
 #X connect 75 0 129 0;
-#X connect 90 0 131 0;
+#X connect 90 0 138 0;
 #X connect 92 0 75 0;
 #X connect 92 0 84 0;
 #X connect 92 1 91 0;
 #X connect 92 1 121 0;
 #X connect 92 1 17 0;
-#X connect 92 1 134 0;
+#X connect 92 1 133 0;
 #X connect 92 2 93 0;
 #X connect 92 2 90 0;
 #X connect 94 0 128 0;
@@ -7060,23 +7060,23 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X connect 120 0 18 0;
 #X connect 121 0 122 0;
 #X connect 123 0 127 0;
-#X connect 125 0 137 0;
-#X connect 126 0 134 0;
-#X connect 132 0 138 0;
-#X connect 133 0 94 0;
-#X connect 133 0 99 0;
-#X connect 133 1 95 0;
-#X connect 133 1 100 0;
-#X connect 133 2 124 0;
-#X connect 133 2 123 0;
-#X connect 133 3 132 0;
-#X connect 133 3 135 0;
-#X connect 134 0 137 0;
-#X connect 134 1 137 0;
-#X connect 134 2 137 0;
-#X connect 136 0 2 1;
-#X connect 137 0 133 0;
-#X connect 137 1 125 0;
+#X connect 125 0 136 0;
+#X connect 126 0 133 0;
+#X connect 131 0 137 0;
+#X connect 132 0 94 0;
+#X connect 132 0 99 0;
+#X connect 132 1 95 0;
+#X connect 132 1 100 0;
+#X connect 132 2 124 0;
+#X connect 132 2 123 0;
+#X connect 132 3 131 0;
+#X connect 132 3 134 0;
+#X connect 133 0 136 0;
+#X connect 133 1 136 0;
+#X connect 133 2 136 0;
+#X connect 135 0 2 1;
+#X connect 136 0 132 0;
+#X connect 136 1 125 0;
 #X restore 42 277 pd dubstep;
 #X obj 42 169 list prepend;
 #X obj 42 191 list trim;
@@ -7739,7 +7739,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X restore 401 351 pd plink;
 #X obj 577 784 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 3900 1;
-#N canvas 330 94 703 867 vox 1;
+#N canvas 330 94 682 817 vox 0;
 #X obj 34 520 *~;
 #X obj 61 493 line~;
 #X obj 61 471 inlet;
@@ -7773,7 +7773,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X msg 162 409 0.6 3000;
 #X obj 34 253 pack s f;
 #X msg 34 275 set \$1 \$2;
-#X msg 34 298 Phrase29a-0-F 0.3;
+#X msg 34 298 Phrase16-8-F 1;
 #X obj 162 259 f;
 #X obj 95 212 sel;
 #X obj 95 158 spigot;
@@ -7789,7 +7789,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X msg 258 138 1;
 #X obj 205 197 t b b;
 #X msg 288 139 0;
-#X obj 269 173 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 269 173 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 148 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
