@@ -43,7 +43,7 @@
 #X obj 297 561 + 0;
 #X obj 297 589 pack 0 0;
 #X text 490 126 ms to samples;
-#X floatatom 325 106 5 0 0 0 - - -;
+#X floatatom 325 106 5 0 0 0 - - -, f 5;
 #X text 575 30 duration;
 #X obj 578 81 select 0;
 #X obj 631 130 delay;
@@ -63,7 +63,7 @@
 #X obj 602 456 * -10000;
 #X obj 406 435 r \$0-sr;
 #X obj 406 456 * 10000;
-#X floatatom 506 172 5 0 0 0 - - -;
+#X floatatom 506 172 5 0 0 0 - - -, f 5;
 #X msg 297 506 1 0 \, \$2 \$1;
 #X obj 686 97 r \$0-stop;
 #X obj 174 112 pack 0 2;
@@ -154,14 +154,14 @@ loop(0/1);
 #X msg 466 391 set \$1 \$2;
 #X msg 466 419 2.205e+08 1e+07;
 #X msg 466 271 22050 1000;
-#X floatatom 579 301 5 0 0 0 - - -;
+#X floatatom 579 301 5 0 0 0 - - -, f 5;
 #X obj 533 329 * 10000;
 #X obj 466 330 * 10000;
 #X obj 74 431 snapshot~;
 #X obj 91 406 metro 100;
 #X obj 91 385 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X floatatom 74 457 10 0 0 0 - - -;
+#X floatatom 74 457 10 0 0 0 - - -, f 10;
 #X obj 169 140 list;
 #N canvas 234 205 750 421 defaults 0;
 #X obj 158 237 select 0;

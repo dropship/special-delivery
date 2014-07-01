@@ -1,9 +1,8 @@
-#N canvas 230 196 783 283 10;
+#N canvas 535 315 783 283 10;
 #X obj 76 87 inlet~;
 #X obj 142 87 inlet~;
 #X obj 77 198 outlet~;
 #X obj 201 87 inlet;
-#X obj 201 127 vline~;
 #X obj 141 136 -~;
 #X obj 141 156 *~;
 #X text 371 150 (1-x)*a + x*b;
@@ -30,10 +29,11 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X text 60 325 See the file LICENSE.txt for the full license text.
 ;
 #X restore 614 19 pd LICENSE-GPL;
-#X connect 0 0 5 1;
+#X obj 201 127 line~;
+#X connect 0 0 4 1;
 #X connect 0 0 2 0;
-#X connect 1 0 5 0;
-#X connect 3 0 4 0;
-#X connect 4 0 6 1;
-#X connect 5 0 6 0;
-#X connect 6 0 2 0;
+#X connect 1 0 4 0;
+#X connect 3 0 14 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 14 0 5 1;
