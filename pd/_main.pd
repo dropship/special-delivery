@@ -33,7 +33,7 @@
 #X obj 34 167 *~;
 #X obj 134 167 *~;
 #X obj 149 143 lop~ 10;
-#X obj 149 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 149 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 149 70 loadbang;
 #X obj 134 261 clip~ -1 1;
