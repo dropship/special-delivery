@@ -1,4 +1,4 @@
-#N canvas 609 185 365 278 10;
+#N canvas 560 200 365 278 10;
 #X declare -path abs;
 #X declare -path audio;
 #X declare -path rj;
@@ -26,18 +26,18 @@
 #X declare -path libs/cyclone;
 #X declare -path audio/synths/Electric-Guitar-Muted;
 #X declare -path audio/vox/reggae-vox;
-#N canvas 180 443 834 400 io 0;
+#N canvas 180 443 834 400 io 1;
 #X obj 34 47 catch~ LEFT;
 #X obj 134 47 catch~ RIGHT;
-#X obj 34 292 dac~;
+#X obj 34 302 dac~;
 #X obj 34 167 *~;
 #X obj 134 167 *~;
 #X obj 149 143 lop~ 10;
-#X obj 149 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 149 93 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 149 70 loadbang;
-#X obj 134 251 clip~ -1 1;
-#X obj 34 251 clip~ -1 1;
+#X obj 134 261 clip~ -1 1;
+#X obj 34 261 clip~ -1 1;
 #X obj 149 117 sig~;
 #X obj 274 60 s build;
 #X obj 313 82 s drop;
@@ -76,6 +76,8 @@
 #X msg 701 52 1;
 #X obj 701 74 s reset;
 #X obj 688 95 print resetting;
+#X obj 215 22 key;
+#X obj 215 44 sel 167;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;
 #X connect 3 0 35 0;
@@ -122,6 +124,8 @@
 #X connect 42 0 44 0;
 #X connect 45 0 46 0;
 #X connect 45 0 47 0;
+#X connect 48 0 49 0;
+#X connect 49 0 6 0;
 #X restore 25 50 pd io;
 #N canvas 570 70 419 774 init 0;
 #X obj 62 56 declare -path abs;
@@ -212,56 +216,6 @@
 #X obj 61 233 u_samplebank2 kick-8 kick-8.wav;
 #X obj 61 108 u_samplebank2 kick-3 kick-3.wav;
 #X restore 38 549 pd kicks;
-#N canvas 103 35 868 642 drum-loops 0;
-#X obj 48 31 u_samplebank2 drum-loop-140-4-0 drum-loop-140-4-0.wav
-;
-#X obj 48 56 u_samplebank2 drum-loop-140-4-1 drum-loop-140-4-1.wav
-;
-#X obj 48 81 u_samplebank2 drum-loop-140-4-2 drum-loop-140-4-2.wav
-;
-#X obj 48 106 u_samplebank2 drum-loop-140-4-3 drum-loop-140-4-3.wav
-;
-#X obj 48 131 u_samplebank2 drum-loop-140-4-4 drum-loop-140-4-4.wav
-;
-#X obj 48 156 u_samplebank2 drum-loop-140-4-5 drum-loop-140-4-5.wav
-;
-#X obj 48 181 u_samplebank2 drum-loop-140-4-6 drum-loop-140-4-6.wav
-;
-#X obj 48 206 u_samplebank2 drum-loop-140-4-7 drum-loop-140-4-7.wav
-;
-#X obj 48 231 u_samplebank2 drum-loop-140-4-8 drum-loop-140-4-8.wav
-;
-#X obj 48 256 u_samplebank2 drum-loop-140-4-9 drum-loop-140-4-9.wav
-;
-#X obj 48 281 u_samplebank2 drum-loop-140-4-10 drum-loop-140-4-10.wav
-;
-#X obj 48 306 u_samplebank2 drum-loop-140-4-11 drum-loop-140-4-11.wav
-;
-#X obj 48 331 u_samplebank2 drum-loop-140-4-12 drum-loop-140-4-12.wav
-;
-#X obj 48 356 u_samplebank2 drum-loop-140-4-13 drum-loop-140-4-13.wav
-;
-#X obj 48 381 u_samplebank2 drum-loop-140-4-14 drum-loop-140-4-14.wav
-;
-#X obj 48 406 u_samplebank2 drum-loop-140-4-15 drum-loop-140-4-15.wav
-;
-#X obj 48 431 u_samplebank2 drum-loop-140-4-16 drum-loop-140-4-16.wav
-;
-#X obj 48 456 u_samplebank2 drum-loop-140-4-17 drum-loop-140-4-17.wav
-;
-#X obj 48 481 u_samplebank2 drum-loop-140-4-18 drum-loop-140-4-18.wav
-;
-#X obj 48 506 u_samplebank2 drum-loop-140-4-19 drum-loop-140-4-19.wav
-;
-#X obj 48 531 u_samplebank2 drum-loop-140-4-20 drum-loop-140-4-20.wav
-;
-#X obj 48 556 u_samplebank2 drum-loop-140-4-21 drum-loop-140-4-21.wav
-;
-#X obj 48 581 u_samplebank2 drum-loop-140-4-22 drum-loop-140-4-22.wav
-;
-#X obj 448 31 u_samplebank2 reggae-drums-140-1 reggae-drums-140-1.wav
-;
-#X restore 38 569 pd drum-loops;
 #N canvas 0 22 450 300 AKWaveForms 0;
 #X obj 45 35 u_samplebank AKWF-0 AKWF-0.wav;
 #X obj 45 60 u_samplebank AKWF-1 AKWF-1.wav;
@@ -350,8 +304,8 @@
 ;
 #X obj 39 433 u_samplebank2 door-bell door-bell.wav;
 #X obj 37 219 u_samplebank2 toms toms.wav;
-#X connect 2 0 17 0;
-#X connect 17 0 1 0;
+#X connect 2 0 16 0;
+#X connect 16 0 1 0;
 #X restore 25 103 pd samplebanks;
 #N canvas 525 402 794 435 mix 0;
 #X obj 26 210 loadbang;

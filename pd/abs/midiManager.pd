@@ -19,10 +19,10 @@
 #X obj 179 70 loadbang;
 #X obj 179 92 del 1000;
 #X obj 43 64 r \$1-INIT-bang;
-#X obj 77 154 openMidifileInfo \$1 bass \$0;
-#X obj 141 90 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 142 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 94 124 openMidifileInfo \$1 chords \$0;
+#X obj 77 154 openMidifileInfo \$1 bass \$0;
 #X obj 60 184 openMidifileInfo \$1 drums \$0;
 #X connect 0 0 7 0;
 #X connect 1 0 4 0;
@@ -33,10 +33,10 @@
 #X connect 4 2 11 0;
 #X connect 12 0 3 0;
 #X connect 13 1 21 0;
-#X connect 13 2 18 0;
-#X connect 13 3 20 0;
+#X connect 13 2 20 0;
+#X connect 13 3 19 0;
 #X connect 14 0 2 0;
 #X connect 15 0 16 0;
 #X connect 16 0 13 0;
 #X connect 17 0 13 0;
-#X connect 19 0 13 0;
+#X connect 18 0 13 0;

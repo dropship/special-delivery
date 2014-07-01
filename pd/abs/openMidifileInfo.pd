@@ -145,6 +145,7 @@ chords 90 2 90_2_4.mid \, chords 90 3 90_3_2.mid \, chords 90 4 90_4_4.mid
 -1;
 #X floatatom 244 597 5 0 0 0 - - -, f 5;
 #X obj 353 80 r new-\$2-midiFile;
+#X floatatom 289 516 5 0 0 0 - - -, f 5;
 #X connect 0 0 14 0;
 #X connect 0 1 17 0;
 #X connect 1 0 0 0;
@@ -164,6 +165,7 @@ chords 90 2 90_2_4.mid \, chords 90 3 90_3_2.mid \, chords 90 4 90_4_4.mid
 #X connect 15 0 0 1;
 #X connect 16 0 0 2;
 #X connect 20 0 3 0;
+#X connect 20 0 35 0;
 #X connect 21 0 10 0;
 #X connect 22 0 25 0;
 #X connect 23 0 19 0;
