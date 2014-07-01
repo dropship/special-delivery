@@ -138,7 +138,7 @@
 #N canvas 772 124 447 330 new-sequence 0;
 #X msg 48 -8 0 1 0 0 0 0 1 0 0 0 1 0 0 0 1 1;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$9;
+#X msg 48 191 \$2;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -990,7 +990,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \;;
 #X connect 71 0 72 0;
 #X restore 25 632 pd kick;
 #X obj 25 399 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3900 1;
 #N canvas 366 22 618 804 timebase 0;
 #X obj 34 173 loadbang;
 #X obj 34 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -1287,7 +1287,7 @@ of a tick;
 #N canvas 772 124 447 330 new-sequence 0;
 #X msg 48 -8 1 0 1 1 1 1 0 1 1 0 1 1 0 0 0 1;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$7;
+#X msg 48 191 \$1;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -1350,7 +1350,7 @@ of a tick;
 #N canvas 772 124 447 330 new-sequence 0;
 #X msg 48 -8 1 2 3 3 3 3 0 2 0 3 0 0 1 1 2 2;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$7;
+#X msg 48 191 \$1;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -1588,7 +1588,7 @@ of a tick;
 #X connect 30 0 29 1;
 #X restore 142 546 pd drum-loop;
 #X obj 142 474 r \$1-drum-loop-vol;
-#N canvas 0 129 788 805 drop-bass 0;
+#N canvas 0 129 788 805 drop-bass 1;
 #X obj 55 826 delwrite~ \$0-stereo 10;
 #X obj 55 846 delread~ \$0-stereo 10;
 #N canvas 0 22 249 499 WIDENER 0;
@@ -1741,7 +1741,7 @@ of a tick;
 #X connect 36 0 2 0;
 #X restore 150 777 pd wobbles;
 #X obj 104 563 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 3;
 #X obj 27 506 bass-1;
 #X obj 218 251 unpack f f f;
 #X obj 27 334 f;
@@ -1907,7 +1907,7 @@ of a tick;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$4;
+#X msg 116 439 \$5;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -1981,7 +1981,7 @@ of a tick;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$4;
+#X msg 116 439 \$5;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -2085,7 +2085,7 @@ of a tick;
 #X obj 423 40 r \$1-reset;
 #X msg 363 64 1;
 #X msg 408 65 0;
-#X obj 363 86 switch~;
+#X obj 363 86 aswitch~;
 #X connect 1 0 2 1;
 #X connect 2 0 32 0;
 #X connect 2 1 31 0;
@@ -2288,14 +2288,14 @@ of a tick;
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$13;
+#X msg 37 237 \$9;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 192 303 outlet;
-#X msg 192 278 \$15 \$16 \$1;
+#X msg 192 278 \$11 \$12 \$13;
 #X obj 192 160 + 1;
 #X text 305 278 Lookahead;
 #X obj 192 128 t f f f;
@@ -2383,14 +2383,14 @@ of a tick;
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$13;
+#X msg 37 237 \$9;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 197 262 outlet;
-#X msg 197 238 \$14;
+#X msg 197 238 \$10;
 #X obj 197 190 + 1;
 #X msg 197 213 set \, adddollar \$1 \,;
 #X text 235 238 Lookahead;
@@ -5047,7 +5047,7 @@ bypass-build-delay \;;
 #X msg 84 401 \$1 1000;
 #X obj 84 331 spigot;
 #X obj 39 262 t f f b;
-#X obj 117 311 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 117 311 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 84 288 spigot;
 #X obj 117 230 random 2;
@@ -5342,14 +5342,14 @@ bypass-build-delay \;;
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$13;
+#X msg 37 237 \$9;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 197 262 outlet;
-#X msg 197 238 \$14;
+#X msg 197 238 \$10;
 #X obj 197 190 + 1;
 #X msg 197 213 set \, adddollar \$1 \,;
 #X text 235 238 Lookahead;
@@ -7010,7 +7010,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X connect 27 0 20 0;
 #X restore 149 109 pd dropouts;
 #X obj 212 86 r \$1-dropouts-on;
-#X obj 225 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 225 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 380 402 sel 0 1 2;
 #X obj 794 373 \$1;
@@ -7049,7 +7049,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X msg 263 220 \; \$1-new-chord-sequence bang \;;
 #X msg 1023 610 \; \$1-kick-vol 0 \; \$1-snare-vol 0 \;;
 #X obj 145 209 nbx 2 40 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 30
--262130 -1 -1 0 256;
+-262130 -1 -1 3 256;
 #X obj 492 347 \$1;
 #X obj 241 407 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -8011,7 +8011,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X msg 328 139 0;
 #X obj 309 173 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 188 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 188 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 298 210 5 0 0 0 - - -, f 5;
 #X floatatom 161 214 5 0 0 0 - - -, f 5;
@@ -8105,7 +8105,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X obj 274 360 route 0 1;
 #X obj 343 294 f;
 #X obj 34 192 t a b;
-#X obj 103 257 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 103 257 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 245 197 t b b b;
 #X obj 274 507 readsf~ 2;
