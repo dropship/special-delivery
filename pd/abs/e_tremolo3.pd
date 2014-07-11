@@ -1,4 +1,4 @@
-#N canvas 1059 112 761 549 10;
+#N canvas 618 187 761 549 10;
 #X obj 177 243 osc~ 5;
 #X obj 177 345 /~ 2;
 #X obj 177 366 +~ 0.5;
@@ -90,6 +90,10 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 -1;
 #X obj 189 216 v \$2-wobble-freq;
 #X obj 337 4 r \$1-trem-phase-reset;
+#X floatatom 303 424 5 0 0 0 - - -, f 5;
+#X obj 177 470 pow~ 1;
+#X obj 227 450 r \$1-drop-bass-wobble-exponent;
+#X obj 227 472 sig~;
 #X connect 0 0 10 0;
 #X connect 1 0 2 0;
 #X connect 2 0 8 0;
@@ -97,7 +101,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 5 0 6 0;
 #X connect 5 1 6 1;
 #X connect 6 0 9 0;
-#X connect 7 0 23 1;
+#X connect 7 0 49 0;
 #X connect 8 0 7 0;
 #X connect 9 0 7 1;
 #X connect 10 0 1 0;
@@ -112,6 +116,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 21 0 22 0;
 #X connect 22 0 5 0;
 #X connect 22 0 8 1;
+#X connect 22 0 48 0;
 #X connect 23 0 4 0;
 #X connect 24 0 0 1;
 #X connect 26 0 17 0;
@@ -139,3 +144,6 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 44 0 31 0;
 #X connect 45 0 39 0;
 #X connect 47 0 42 0;
+#X connect 49 0 23 1;
+#X connect 50 0 51 0;
+#X connect 51 0 49 1;

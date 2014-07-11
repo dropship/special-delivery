@@ -1,4 +1,4 @@
-#N canvas 435 313 365 278 10;
+#N canvas 277 156 365 278 10;
 #X declare -path abs;
 #X declare -path audio;
 #X declare -path rj;
@@ -293,7 +293,7 @@
 #X obj 66 179 u_samplebank2 crash-6 crash-6.wav;
 #X obj 66 204 u_samplebank2 crash-7 crash-7.wav;
 #X obj 66 229 u_samplebank2 crash-8 crash-8.wav;
-#X obj 66 254 u_samplebank2 crash-9 crash-9.wav;
+#X obj 66 30 u_samplebank2 crash-0 crash-9.wav;
 #X restore 39 460 pd crashes;
 #X obj 37 199 u_samplebank2 hat-3 hat-3.wav;
 #X obj 38 363 u_samplebank2 crash-boom crash-boom.wav;
