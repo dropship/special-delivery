@@ -14,7 +14,6 @@
 #X declare -path resources/midi/voices;
 #X declare -path libs/rm;
 #X declare -path audio/waveforms;
-#X declare -path audio/fx/rises;
 #X declare -path abs/dmx;
 #X declare -path audio/waveforms/huge;
 #X declare -path abs/huge;
@@ -26,6 +25,7 @@
 #X declare -path libs/cyclone;
 #X declare -path audio/synths/Electric-Guitar-Muted;
 #X declare -path audio/vox/reggae-vox;
+#X declare -path audio/fx/risers;
 #N canvas 180 443 834 400 io 0;
 #X obj 34 47 catch~ LEFT;
 #X obj 134 47 catch~ RIGHT;
@@ -149,7 +149,6 @@
 #X obj 177 704 s \$0-CHORDS-maj/min;
 #X obj 62 377 declare -path libs/rm;
 #X obj 62 417 declare -path audio/waveforms;
-#X obj 62 257 declare -path audio/fx/rises;
 #X obj 62 76 declare -path abs/dmx;
 #X obj 62 437 declare -path audio/waveforms/huge;
 #X obj 62 96 declare -path abs/huge;
@@ -161,13 +160,14 @@
 #X obj 62 397 declare -path libs/cyclone;
 #X obj 62 557 declare -path audio/synths/Electric-Guitar-Muted;
 #X obj 62 537 declare -path audio/vox/reggae-vox;
+#X obj 62 257 declare -path audio/fx/risers;
 #X connect 13 0 15 0;
 #X connect 13 0 16 0;
 #X connect 15 0 14 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
 #X restore 25 29 pd init;
-#N canvas 159 66 704 672 samplebanks 0;
+#N canvas 948 286 704 672 samplebanks 0;
 #X obj 37 299 synth-load ARP-Poly-Lead;
 #X obj 342 182 print;
 #X msg 305 189 info;
@@ -304,6 +304,14 @@
 ;
 #X obj 39 433 u_samplebank2 door-bell door-bell.wav;
 #X obj 37 219 u_samplebank2 toms toms.wav;
+#X obj 337 405;
+#N canvas 168 322 436 481 risers 0;
+#X obj 39 79 u_samplebank2 small-riser-2 small-riser-2.wav;
+#X obj 39 104 u_samplebank2 small-riser-3 small-riser-3.wav;
+#X obj 39 129 u_samplebank2 small-riser-4 small-riser-4.wav;
+#X obj 39 54 u_samplebank2 small-riser-1 small-riser-1.wav;
+#X obj 39 29 u_samplebank2 small-riser-0 small-riser-0.wav;
+#X restore 205 533 pd risers;
 #X connect 2 0 16 0;
 #X connect 16 0 1 0;
 #X restore 25 103 pd samplebanks;
