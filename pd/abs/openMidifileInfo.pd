@@ -1,4 +1,4 @@
-#N canvas 821 43 489 793 10;
+#N canvas 1016 69 489 793 10;
 #N canvas 156 58 895 770 loadMidiFileList 0;
 #X msg 33 78 ../resources/midi/\$1-info.txt;
 #X obj 33 48 symbol \$2;
@@ -47,26 +47,31 @@ chords 90 2 90_2_4.mid \, chords 90 3 90_3_2.mid \, chords 90 4 90_4_4.mid
 \, chords 140 19 140_19_4.mid \, chords 140 20 140_20_2.mid \, chords
 140 21 140_21_4.mid \, chords 140 22 140_22_2.mid \, chords 140 23
 140_23_8.mid \, chords 140 24 140_24_8.mid \, chords 140 25 140_25_8.mid
-\, chords 140 26 140_26_1.mid \, chords 160 0 160_0_4.mid \, chords
-160 1 160_1_4.mid \, chords 160 2 160_2_4.mid \, chords 160 3 160_3_2.mid
-\, chords 160 4 160_4_4.mid \, chords 160 5 160_5_4.mid \, chords 160
-6 160_6_4.mid \, chords 160 7 160_7_3.mid \, chords 160 8 160_8_3.mid
-\, chords 160 9 160_9_4.mid \, chords 160 10 160_10_1.mid \, chords
-160 11 160_11_4.mid \, chords 160 12 160_12_4.mid \, chords 160 13
-160_13_4.mid \, chords 160 14 160_14_4.mid \, chords 160 15 160_15_4.mid
-\, chords 160 16 160_16_2.mid \, chords 180 0 180_1_4.mid \, chords
-180 1 180_3_8.mid \, chords 180 2 180_4_4.mid \, chords 180 3 180_5_4.mid
-\, chords 180 4 180_6_4.mid \, chords 180 5 180_7_8.mid \, chords 180
-6 180_8_8.mid \, chords 180 7 180_9_4.mid \, chords 180 8 180_10_4.mid
-\, chords 180 9 180_11_4.mid \, chords 180 10 180_12_4.mid \, chords
-180 11 180_13_4.mid \,;
+\, chords 140 26 140_26_1.mid \, chords 140 27 140_27_4.mid \, chords
+140 28 140_28_4.mid \, chords 140 29 140_29_4.mid \, chords 140 30
+140_30_4.mid \, chords 140 31 140_31_4.mid \, chords 140 32 140_32_4.mid
+\, chords 140 33 140_33_4.mid \, chords 140 34 140_34_4.mid \, chords
+140 35 140_35_4.mid \, chords 140 36 140_36_4.mid \, chords 140 37
+140_37_2.mid \, chords 140 38 140_38_4.mid \, chords 160 0 160_0_4.mid
+\, chords 160 1 160_1_4.mid \, chords 160 2 160_2_4.mid \, chords 160
+3 160_3_2.mid \, chords 160 4 160_4_4.mid \, chords 160 5 160_5_4.mid
+\, chords 160 6 160_6_4.mid \, chords 160 7 160_7_3.mid \, chords 160
+8 160_8_3.mid \, chords 160 9 160_9_4.mid \, chords 160 10 160_10_1.mid
+\, chords 160 11 160_11_4.mid \, chords 160 12 160_12_4.mid \, chords
+160 13 160_13_4.mid \, chords 160 14 160_14_4.mid \, chords 160 15
+160_15_4.mid \, chords 160 16 160_16_2.mid \, chords 180 0 180_1_4.mid
+\, chords 180 1 180_3_8.mid \, chords 180 2 180_4_4.mid \, chords 180
+3 180_5_4.mid \, chords 180 4 180_6_4.mid \, chords 180 5 180_7_8.mid
+\, chords 180 6 180_8_8.mid \, chords 180 7 180_9_4.mid \, chords 180
+8 180_10_4.mid \, chords 180 9 180_11_4.mid \, chords 180 10 180_12_4.mid
+\, chords 180 11 180_13_4.mid \,;
 #X obj 397 547 t b;
 #X obj 33 321 route \$2-count;
 #X obj 72 539 u_collect;
 #X msg 52 585 addcomma;
 #X obj 33 509 t b b a;
 #X obj 177 324 t b b;
-#X msg 135 649 90 25 \, 110 20 \, 125 13 \, 140 27 \, 160 17 \, 180
+#X msg 135 649 90 25 \, 110 20 \, 125 13 \, 140 39 \, 160 17 \, 180
 12 \,;
 #X obj 33 18 inlet;
 #X obj 397 518 inlet \$1-MIDI-\$2-getFilelist;
