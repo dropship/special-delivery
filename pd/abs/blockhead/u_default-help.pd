@@ -1,0 +1,8 @@
+#N canvas 799 218 450 300 10;
+#X floatatom 15 41 5 0 0 0 - - -;
+#X floatatom 15 88 5 0 0 0 - - -;
+#X obj 15 66 u_default \$1 2;
+#X text 12 9 set output for first argument and failing that \, second
+argument;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

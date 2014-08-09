@@ -1,0 +1,13 @@
+#N canvas 540 224 450 300 10;
+#X text 43 10 look up a single item in a list by index;
+#X msg 153 43 a b c something;
+#X floatatom 57 41 5 0 0 0 - - -;
+#X symbolatom 57 161 30 0 0 0 - - -;
+#X obj 57 131 symbol;
+#X obj 57 109 u_lookup;
+#X msg 153 77 homonculous floating-eye kestrel at-symbol;
+#X connect 1 0 5 1;
+#X connect 2 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 1;

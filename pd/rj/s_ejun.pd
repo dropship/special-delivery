@@ -1,4 +1,4 @@
-#N canvas 0 0 1024 684 8;
+#N canvas 0 22 1024 684 8;
 #X obj 141 160 sig~;
 #X obj 646 86 inlet;
 #X obj 162 133 mtof;
@@ -7,7 +7,7 @@
 #X obj 198 195 sqrt;
 #X obj 198 174 / 2000;
 #X obj 229 153 s \$0-envelopes;
-#N canvas 0 0 262 827 dispatchers 0;
+#N canvas 0 22 262 827 dispatchers 0;
 #X obj 97 -53 u_dispatch \$0 env1a;
 #X obj 97 -29 u_dispatch \$0 env1d;
 #X obj 97 -8 u_dispatch \$0 env1s;
@@ -87,7 +87,7 @@
 #X obj 79 391 sig~;
 #X obj 646 136 route save;
 #X obj 646 192 outlet;
-#N canvas 0 0 901 408 envelopes 0;
+#N canvas 0 22 901 408 envelopes 0;
 #X obj 499 192 t a a;
 #X obj 60 184 t a a b;
 #X obj 276 189 t a a b;
@@ -167,7 +167,7 @@
 #X obj 148 288 sig~;
 #X obj 148 251 r \$0-mod1b;
 #X obj 134 480 r~ \$0-keyscale;
-#N canvas 0 0 848 695 vibdel 0;
+#N canvas 0 22 848 695 vibdel 0;
 #X obj 392 194 f 0;
 #X msg 392 219 0 \, 1 \$1;
 #X obj 409 161 * 3000;
@@ -196,11 +196,11 @@
 #X obj 646 159 u_loader s_ejun-\$1 \$0;
 #X obj 139 197 *~ 0.5;
 #X obj 162 41 t a b b b b;
-#X obj 227 81 > 0;
+#X obj 237 88 > 0;
 #X obj 162 65 unpack f f f;
-#X obj 230 101 sel 1;
+#X obj 240 108 sel 1;
 #X obj 123 550 s~ \$0-f0;
-#N canvas 0 0 450 300 lfo 0;
+#N canvas 0 22 450 300 lfo 0;
 #X obj 99 104 *~ -1;
 #X obj 77 155 min~;
 #X obj 99 129 +~ 1;
@@ -241,7 +241,7 @@
 #X obj 520 473 +~ 30;
 #X obj 378 512 vcf~ 1.6;
 #X obj 348 337 *~;
-#N canvas 0 0 348 187 oct 0;
+#N canvas 0 22 348 187 oct 0;
 #X obj 86 133 pow;
 #X obj 86 108 swap 2;
 #X obj 88 65 - 2;
@@ -263,7 +263,7 @@
 #X restore 360 295 pd oct;
 #X obj 360 316 sig~;
 #X obj 533 334 *~;
-#N canvas 0 0 348 187 oct 0;
+#N canvas 0 22 348 187 oct 0;
 #X obj 88 114 pow;
 #X obj 88 89 swap 2;
 #X obj 88 65 - 2;
@@ -286,7 +286,7 @@
 #X obj 378 529 vcf~ 1.6;
 #X obj 441 364 s_blsquare;
 #X obj 440 312 *~;
-#N canvas 0 0 348 187 oct 0;
+#N canvas 0 22 348 187 oct 0;
 #X obj 88 114 pow;
 #X obj 88 89 swap 2;
 #X obj 88 65 - 2;
@@ -313,7 +313,7 @@
 #X text 429 461 resonance;
 #X obj 554 272 r \$0-osc3a;
 #X obj 361 265 r \$0-osc1a;
-#N canvas 0 0 450 300 xf 0;
+#N canvas 0 22 450 300 xf 0;
 #X obj 76 87 inlet~;
 #X obj 142 87 inlet~;
 #X obj 77 198 outlet~;
@@ -329,7 +329,7 @@
 #X restore 377 437 pd xf;
 #X obj 400 396 r \$0-osc1b;
 #X obj 399 414 sig~;
-#N canvas 0 0 450 300 xf 0;
+#N canvas 0 22 450 300 xf 0;
 #X obj 76 87 inlet~;
 #X obj 142 87 inlet~;
 #X obj 77 198 outlet~;
@@ -380,7 +380,7 @@
 #X obj 238 420 *~;
 #X obj 239 438 *~;
 #X obj 249 359 *~ 2;
-#N canvas 0 0 450 300 xf 0;
+#N canvas 0 22 450 300 xf 0;
 #X obj 76 87 inlet~;
 #X obj 142 87 inlet~;
 #X obj 77 198 outlet~;
@@ -402,6 +402,8 @@ synthesiser sounds \, ajf 2010;
 #X obj 475 618 sig~;
 #X obj 475 600 * 3;
 #X obj 380 639 *~;
+#X obj 419 103 r all-juno-notes-off;
+#X msg 218 14 0 0 0;
 #X connect 0 0 27 0;
 #X connect 1 0 15 0;
 #X connect 2 0 0 0;
@@ -524,3 +526,5 @@ synthesiser sounds \, ajf 2010;
 #X connect 116 0 118 1;
 #X connect 117 0 116 0;
 #X connect 118 0 37 0;
+#X connect 119 0 120 0;
+#X connect 120 0 28 0;

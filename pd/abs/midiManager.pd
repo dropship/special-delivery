@@ -1,4 +1,4 @@
-#N canvas 422 87 491 602 10;
+#N canvas 275 334 691 634 10;
 #X msg 59 510 stop;
 #X obj 40 350 sel 0;
 #X obj 40 320 mod 128;
@@ -22,8 +22,15 @@
 #X obj 142 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 94 124 openMidifileInfo \$1 chords \$0;
+#X obj 372 84 r \$1-tick;
+#X obj 397 226 s alternate-chords-midiFile;
+#X obj 372 153 s original-chords-midiFile;
+#X obj 372 106 mod 256;
+#X obj 372 129 sel 0 192;
 #X obj 77 154 openMidifileInfo \$1 bass \$0;
 #X obj 60 184 openMidifileInfo \$1 drums \$0;
+#X obj 397 179 random 2;
+#X obj 397 201 sel 0;
 #X connect 0 0 7 0;
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;
@@ -32,11 +39,17 @@
 #X connect 4 1 0 0;
 #X connect 4 2 11 0;
 #X connect 12 0 3 0;
-#X connect 13 1 21 0;
-#X connect 13 2 20 0;
+#X connect 13 1 26 0;
+#X connect 13 2 25 0;
 #X connect 13 3 19 0;
 #X connect 14 0 2 0;
 #X connect 15 0 16 0;
 #X connect 16 0 13 0;
 #X connect 17 0 13 0;
 #X connect 18 0 13 0;
+#X connect 20 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X connect 24 1 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 21 0;

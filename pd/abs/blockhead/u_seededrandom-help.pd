@@ -1,0 +1,22 @@
+#N canvas 541 265 450 300 10;
+#X msg 25 145 bang;
+#X floatatom 25 193 5 0 0 0 - - -;
+#X msg 328 49 \; global-seed 1234 \;;
+#X msg 328 85 \; global-seed 1024 \;;
+#X obj 25 170 u_seededrandom 15 global-seed;
+#X floatatom 196 148 5 0 0 0 - - -;
+#X msg 235 146 bang;
+#X floatatom 235 194 5 0 0 0 - - -;
+#X floatatom 406 149 5 0 0 0 - - -;
+#X msg 126 47 bang;
+#X obj 235 171 u_seededrandom 15 global-seed;
+#X text 24 10 use a single global seed sender to seed multiple random
+numbers somewhat repeatably.;
+#X connect 0 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 1;
+#X connect 6 0 10 0;
+#X connect 8 0 10 1;
+#X connect 9 0 0 0;
+#X connect 9 0 6 0;
+#X connect 10 0 7 0;

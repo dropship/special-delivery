@@ -1,6 +1,6 @@
 #N canvas 609 390 236 406 10;
 #X obj 36 31 inlet;
-#N canvas 952 224 871 639 \$0-poly 1;
+#N canvas 952 224 871 639 \$0-poly 0;
 #X obj 150 30 r \$0-in1-1;
 #X obj 150 60 r \$0-in1-2;
 #X obj 150 90 r \$0-in1-3;

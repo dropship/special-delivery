@@ -1,0 +1,51 @@
+#N canvas 697 187 450 300 10;
+#X obj 118 176 hsl 128 15 0 2 0 0 empty empty en-loudenate -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 34 251 dac~;
+#X text 32 70 args (optional): rise-time fall-time;
+#X text 114 145 with great power comes great responsibility.;
+#X obj 34 199 e_master 10 10;
+#X obj 35 101 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#N canvas 89 80 450 300 audio-sources 0;
+#X obj 39 260 outlet~;
+#X obj 86 166 osc~ 440;
+#X obj 86 141 mtof;
+#X obj 86 208 *~;
+#X obj 141 166 line~;
+#X obj 86 67 random 64;
+#X obj 86 89 + 32;
+#X obj 16 187 noise~;
+#X obj 39 236 +~;
+#X obj 16 209 *~ 0.01;
+#X msg 141 142 1 \, 0 200;
+#X obj 86 111 t f b;
+#X obj 86 18 inlet;
+#X obj 86 42 metro 250;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 8 1;
+#X connect 4 0 3 1;
+#X connect 5 0 6 0;
+#X connect 6 0 11 0;
+#X connect 7 0 9 0;
+#X connect 8 0 0 0;
+#X connect 9 0 8 0;
+#X connect 10 0 4 0;
+#X connect 11 0 2 0;
+#X connect 11 1 10 0;
+#X connect 12 0 13 0;
+#X connect 13 0 5 0;
+#X restore 35 121 pd audio-sources;
+#X text 177 194 ^ = 1;
+#X text 243 193 ^ probably too much;
+#X text 32 14 obtuse "auto mastering" commpression patch that always
+wins the loudness wars against all adversaries. basically if you want
+your stereo input to sound louder than it does \, use this. output
+is soft-clipped with tanh.;
+#X connect 0 0 4 2;
+#X connect 4 0 1 0;
+#X connect 4 1 1 1;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 6 0 4 1;
