@@ -31,6 +31,7 @@
 #X obj 60 184 openMidifileInfo \$1 drums \$0;
 #X obj 397 179 random 2;
 #X obj 397 201 sel 0;
+#X obj 43 211 openMidifileInfo \$1 voices \$0;
 #X connect 0 0 7 0;
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;
@@ -39,6 +40,7 @@
 #X connect 4 1 0 0;
 #X connect 4 2 11 0;
 #X connect 12 0 3 0;
+#X connect 13 0 29 0;
 #X connect 13 1 26 0;
 #X connect 13 2 25 0;
 #X connect 13 3 19 0;
