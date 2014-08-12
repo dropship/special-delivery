@@ -36,6 +36,12 @@
 #X obj 172 236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 189 236 Drop;
+#X obj 564 411 list trim;
+#X obj 564 389 list prepend WOBBLE-EVENT-FREQ;
+#X floatatom 195 204 5 0 0 0 - - -, f 5;
+#X text 193 172 Wobble;
+#X text 193 188 freq;
+#X floatatom 576 312 5 0 0 0 - - -, f 5;
 #X connect 0 0 10 0;
 #X connect 1 0 11 0;
 #X connect 2 0 12 0;
@@ -58,4 +64,8 @@
 #X connect 24 0 21 0;
 #X connect 27 0 24 0;
 #X connect 29 0 23 0;
+#X connect 31 0 9 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 36 0 32 0;
 #X coords 0 -1 1 1 135 170 1 100 100;

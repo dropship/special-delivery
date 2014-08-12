@@ -18,7 +18,7 @@
 #X obj 43 87 spigot 1;
 #X obj 88 64 r \$1-snare-block;
 #X obj 63 245 r \$1-snare-bang;
-#X msg 43 276 snare-23;
+#X msg 43 276 snare-11;
 #X obj 43 470 output \$1 snare;
 #X obj 197 170 mod 100;
 #X obj 278 55 r \$1-state;
@@ -86,7 +86,7 @@
 #X obj 51 280 list prepend;
 #X obj 51 301 list trim;
 #X obj 51 333 route 0 1;
-#X obj 120 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 120 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 141 376 s_playtable2;
 #X msg 51 206 hat-3 \$1;
@@ -95,10 +95,10 @@
 #N canvas 0 22 325 310 trap 0;
 #X msg 19 245 1;
 #X obj 48 221 spigot;
-#X obj 81 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 81 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 98 221 spigot;
-#X obj 131 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 131 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 148 221 spigot;
 #X obj 181 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -163,9 +163,9 @@
 #X obj 19 335 sel 1;
 #X obj 106 252 r generate-track-\$1;
 #N canvas 772 124 447 330 new-sequence 0;
-#X msg 48 -8 1 0 0 1 1 0 0 0 1 1 1 0 1 0 0 1;
+#X msg 48 -8 0 0 0 1 1 0 0 0 1 1 0 1 0 1 1 1;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$8;
+#X msg 48 191 \$4;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -263,7 +263,7 @@
 #X obj 241 280 list prepend;
 #X obj 241 301 list trim;
 #X obj 241 333 route 0 1;
-#X obj 310 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 310 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 241 404 lop~ 3500;
 #X obj 145 414 inlet;
@@ -325,7 +325,7 @@
 #X obj 21 578 *~;
 #X obj 68 578 *~;
 #X obj 83 552 line~;
-#X msg 21 367 kick-2;
+#X msg 21 367 kick-1;
 #X msg 39 314 set kick-\$1;
 #X obj 39 267 r generate-track-\$1;
 #X obj 83 529 inlet;
@@ -354,7 +354,7 @@
 #X obj 80 311 t f f;
 #X obj 132 345 symbol;
 #X obj 292 114 vradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X obj 292 330 / 7;
 #X obj 292 226 + 1;
 #X obj 30 51 r generate-track-\$1;
@@ -812,7 +812,7 @@ of a tick;
 #X obj 42 88 mod 256;
 #X obj 172 283 s_playtable2;
 #X msg 186 196 set Zenhiser-DL-RF01-\$1;
-#X msg 172 236 Zenhiser-DL-RF01-12;
+#X msg 172 236 Zenhiser-DL-RF01-7;
 #X obj 186 172 random 16;
 #X floatatom 86 117 5 0 0 0 - - -, f 5;
 #X connect 0 0 4 0;
@@ -857,9 +857,9 @@ of a tick;
 #X obj 245 215 t f f;
 #X obj 332 225 r generate-track-\$1;
 #N canvas 772 124 447 330 new-sequence 0;
-#X msg 48 -8 0 1 0 1 1 0 0 0 1 0 1 0 0 0 1 0;
+#X msg 48 -8 1 0 1 1 1 0 0 0 0 1 1 1 0 0 0 0;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$4;
+#X msg 48 191 \$13;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -920,9 +920,9 @@ of a tick;
 #X obj 245 69 / 8;
 #X obj 245 270 sel 1;
 #N canvas 772 124 447 330 new-sequence 0;
-#X msg 48 -8 0 0 1 3 2 0 2 2 3 3 1 1 2 2 2 2;
+#X msg 48 -8 0 3 1 2 0 2 3 2 0 0 3 3 2 1 3 0;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$4;
+#X msg 48 191 \$13;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -1323,7 +1323,7 @@ of a tick;
 #X obj 309 80 change;
 #X obj 309 38 / 4;
 #X obj 27 -5 r \$0-kick;
-#N canvas 229 389 929 527 wobbles 0;
+#N canvas 134 189 929 527 wobbles 0;
 #X obj 31 23 inlet~;
 #X obj 321 167 *~;
 #X obj 31 234 outlet~;
@@ -1472,7 +1472,7 @@ of a tick;
 #X connect 64 0 63 1;
 #X restore 221 212 pd wobbles;
 #X obj 278 149 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 1;
 #X obj 27 506 bass-1;
 #X obj 112 207 unpack f f f;
 #X obj 27 224 f;
@@ -1533,9 +1533,9 @@ of a tick;
 #X obj 346 15 r \$1-drop-bass-preset-A;
 #X obj 346 37 sel 0 1;
 #N canvas 684 150 280 329 new-sequence 0;
-#X msg 48 -8 0 0 0 1 0 1 1 0 1 0 0 0 1 1 0 0;
+#X msg 48 -8 1 0 0 0 1 0 1 1 0 0 1 0 0 1 0 0;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$4;
+#X msg 48 191 \$13;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -1580,9 +1580,9 @@ of a tick;
 #X obj 262 371 change;
 #X msg 262 393 bang;
 #N canvas 684 150 280 329 new-sequence 0;
-#X msg 48 -8 0 1 1 1 0 0 1 0 0 0 0 0 0 1 0 0;
+#X msg 48 -8 1 0 1 1 1 1 0 1 0 0 1 1 0 1 1 0;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$4;
+#X msg 48 191 \$13;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -1736,14 +1736,13 @@ of a tick;
 #X obj 260 226 c_urn 3;
 #X msg 260 203 clear \, bang;
 #X msg 260 249 add2 \$1;
-#X msg 116 283 0 1 2 2 1 0 0 2 1 0 2 0 2 1 0 2 0 1 0 2 1 2 0 1 2 0
-1 0 2 1 2 0 1;
+#X msg 116 283 2 1 0 2 0 1 1 2 0 0 0 2 1 2;
 #X obj 239 13 inlet;
 #X obj 315 57 moses 32;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$5;
+#X msg 116 439 \$4;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -1811,14 +1810,13 @@ of a tick;
 #X obj 195 228 c_urn 3;
 #X msg 195 205 clear \, bang;
 #X msg 195 251 add2 \$1;
-#X msg 116 283 0 1 2 2 1 0 2 1 2 1 0 2 0 1 2 1 0 2 1 0 2 0 2 1 1 0
-2 1 0 2 0 2 1;
+#X msg 116 283 1 2 0 0 2 1 1 0 2 0 1 0 2 2;
 #X obj 239 13 inlet;
 #X obj 315 57 moses 32;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$5;
+#X msg 116 439 \$4;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -1979,7 +1977,7 @@ of a tick;
 #X msg 196 309 6;
 #X msg 226 309 4;
 #X obj 167 263 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 3;
+-1 -1 1;
 #X obj 167 333 f;
 #X obj 167 144 mod 16;
 #X msg 256 309 2;
@@ -1998,7 +1996,7 @@ of a tick;
 #X msg 46 107 0 0 1 1 2 0 1 0 2 1 0 0 3 3 1 2 0 1 3 1 3 1 3 1 0 0 1
 2 1 2 2 2;
 #X msg 73 193 set \, adddollar \$1;
-#X msg 46 216 \$8;
+#X msg 46 216 \$26;
 #X obj 73 170 + 1;
 #N canvas 653 493 268 247 new-list 0;
 #X obj 51 101 until;
@@ -2523,7 +2521,7 @@ of a tick;
 #X obj 37 53 / 4;
 #X obj 37 115 mod 32;
 #N canvas 637 143 526 401 new-sequence 0;
-#X msg 37 18 3 0 4 2 0 2 2 2 0 2 1 3 0 1 1 4;
+#X msg 37 18 3 0 3 1 1 3 2 0 1 1 2 0 0 3 2 2;
 #X msg 64 214 set \, adddollar \$1;
 #N canvas 0 22 450 300 new-list 0;
 #X msg 51 79 16;
@@ -2556,14 +2554,14 @@ of a tick;
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$8;
+#X msg 37 237 \$10;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 192 303 outlet;
-#X msg 192 278 \$10 \$11 \$12;
+#X msg 192 278 \$12 \$13 \$14;
 #X obj 192 160 + 1;
 #X text 305 278 Lookahead;
 #X obj 192 128 t f f f;
@@ -2618,7 +2616,7 @@ of a tick;
 #X obj 37 204 sel 1;
 #X obj 80 126 r generate-track-\$1;
 #N canvas 1086 177 416 451 new-sequence 0;
-#X msg 37 18 1 1 0 0 1 0 2 0 0 3 1 1 1 2 0 2;
+#X msg 37 18 4 2 1 2 2 4 0 4 3 0 4 4 1 0 3 1;
 #X msg 64 214 set \, adddollar \$1;
 #N canvas 0 22 450 300 new-list 0;
 #X msg 51 79 16;
@@ -2651,14 +2649,14 @@ of a tick;
 #X obj 95 -32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 49 mod 32;
-#X msg 37 237 \$8;
+#X msg 37 237 \$10;
 #X obj 64 80 moses 16;
 #X obj 64 103 mod 8;
 #X obj 109 103 mod 8;
 #X obj 64 191 + 1;
 #X obj 109 126 + 8;
 #X obj 197 262 outlet;
-#X msg 197 238 \$9;
+#X msg 197 238 \$11;
 #X obj 197 190 + 1;
 #X msg 197 213 set \, adddollar \$1 \,;
 #X text 235 238 Lookahead;
@@ -5485,9 +5483,9 @@ bypass-build-delay \;;
 #N canvas 516 91 618 831 where-we-belong-drop-break 0;
 #X obj 67 23 r \$1-tick;
 #N canvas 625 151 306 301 new-sequence 0;
-#X msg 46 31 0 0 1 0 1 0 1 1 0 1 0 0 0 0 0 1;
+#X msg 46 31 1 0 0 1 1 1 1 1 0 1 0 0 0 1 0 0;
 #X msg 73 107 set \, adddollar \$1;
-#X msg 46 130 \$7;
+#X msg 46 130 \$4;
 #X obj 73 84 + 1;
 #N canvas 493 226 268 247 new-list 0;
 #X obj 51 101 until;
@@ -5540,9 +5538,9 @@ bypass-build-delay \;;
 #X obj 161 155 mod 32;
 #X obj 67 781 notes 6 65 0 2 3 7 9 10;
 #N canvas 767 140 380 268 new-sequence 0;
-#X msg 45 46 0 -2 -4 -6 -7 -7 -6 -4 -4 -6 -6 -5 -3 -3 -4 -6;
+#X msg 45 46 0 1 3 5 7 6 8 6 4 6 5 6 5 3 5 3;
 #X msg 72 122 set \, adddollar \$1;
-#X msg 45 145 \$3;
+#X msg 45 145 \$4;
 #X obj 72 99 + 1;
 #N canvas 966 280 218 303 new-list 0;
 #X obj 47 92 until;
@@ -5984,7 +5982,7 @@ bypass-build-delay \;;
 #X obj 532 213 mod 256;
 #X obj 532 257 list trim;
 #X obj 613 214 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 1;
 #N canvas 156 276 487 309 drum-fill 0;
 #X obj 196 239 s \$1-drum-fill;
 #X obj 196 194 spigot;
@@ -7121,7 +7119,7 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X msg 301 197 \; \$1-new-chord-sequence bang \;;
 #X msg 1303 670 \; \$1-kick-vol 0 \; \$1-snare-vol 0 \;;
 #X obj 53 260 nbx 2 40 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 30
--262130 -1 -1 4 256;
+-262130 -1 -1 3 256;
 #X obj 672 407 \$1;
 #X obj 281 467 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -7843,7 +7841,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X obj 274 360 route 0 1;
 #X obj 343 294 f;
 #X obj 34 192 t a b;
-#X obj 103 257 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 103 257 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 245 197 t b b b;
 #X obj 274 507 readsf~ 2;
@@ -8983,7 +8981,7 @@ bang \; \$1-build-up-spigot 0 \; \$1-drop-bass-vol 0 \; \$1-hats-vol
 #X restore 279 466 pd shepard-risers;
 #X obj 279 398 r \$1-shepard-risers-vol;
 #X obj 332 308 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3900 1;
 #X obj 332 286 r \$1-risers-vol;
 #N canvas 38 62 385 420 breakdown-risers 0;
 #X obj 26 265 *~;
@@ -9200,7 +9198,7 @@ osc3a 0.166378 \, osc2d 0.023622 \, osc2c 0.0472441 \, osc2b 0.551181
 #X obj 71 265 *~ 6;
 #X obj 218 133 random 4;
 #X obj 218 157 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 2;
 #X msg 122 170 \$1 0;
 #X obj 122 104 until;
 #X msg 122 81 127;
