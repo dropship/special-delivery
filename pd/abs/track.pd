@@ -95,7 +95,7 @@
 #N canvas 0 22 325 310 trap 0;
 #X msg 19 245 1;
 #X obj 48 221 spigot;
-#X obj 81 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 81 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 98 221 spigot;
 #X obj 131 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -562,7 +562,7 @@
 #X connect 71 0 72 0;
 #X restore 25 632 pd kick;
 #X obj 25 401 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3900 1;
 #N canvas 366 22 618 804 timebase 0;
 #X obj 34 173 loadbang;
 #X obj 34 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -1472,7 +1472,7 @@ of a tick;
 #X connect 64 0 63 1;
 #X restore 221 212 pd wobbles;
 #X obj 278 149 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 3;
+-1 -1 2;
 #X obj 27 506 bass-1;
 #X obj 112 207 unpack f f f;
 #X obj 27 224 f;
@@ -1736,13 +1736,14 @@ of a tick;
 #X obj 260 226 c_urn 3;
 #X msg 260 203 clear \, bang;
 #X msg 260 249 add2 \$1;
-#X msg 116 283 0 1 2 2 1 0 0 2 1 0 2 0 2 1 0 2 0 1 0 2 1 2 0 1;
+#X msg 116 283 0 1 2 2 1 0 0 2 1 0 2 0 2 1 0 2 0 1 0 2 1 2 0 1 2 0
+1 0 2 1 2 0 1;
 #X obj 239 13 inlet;
 #X obj 315 57 moses 32;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$3;
+#X msg 116 439 \$5;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -1810,13 +1811,14 @@ of a tick;
 #X obj 195 228 c_urn 3;
 #X msg 195 205 clear \, bang;
 #X msg 195 251 add2 \$1;
-#X msg 116 283 0 1 2 2 1 0 2 1 2 1 0 2 0 1 2 1 0 2 1 0 2 0 2 1;
+#X msg 116 283 0 1 2 2 1 0 2 1 2 1 0 2 0 1 2 1 0 2 1 0 2 0 2 1 1 0
+2 1 0 2 0 2 1;
 #X obj 239 13 inlet;
 #X obj 315 57 moses 32;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$3;
+#X msg 116 439 \$5;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -1977,7 +1979,7 @@ of a tick;
 #X msg 196 309 6;
 #X msg 226 309 4;
 #X obj 167 263 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 3;
 #X obj 167 333 f;
 #X obj 167 144 mod 16;
 #X msg 256 309 2;
@@ -7119,7 +7121,7 @@ env1r 0 \, env1s 1 \, env1d 0 \, env1a 0 \,;
 #X msg 301 197 \; \$1-new-chord-sequence bang \;;
 #X msg 1303 670 \; \$1-kick-vol 0 \; \$1-snare-vol 0 \;;
 #X obj 53 260 nbx 2 40 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 30
--262130 -1 -1 2 256;
+-262130 -1 -1 4 256;
 #X obj 672 407 \$1;
 #X obj 281 467 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -7723,7 +7725,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X obj 177 813 delread~ \$1-reggae-vox-del-c 428.56;
 #X obj 115 749 delread~ \$1-reggae-vox-del-l 857.12;
 #X obj 512 456 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 2340 1;
 #X obj 135 185 mod 256;
 #X obj 130 601 r \$1-reggae-vox-del;
 #X msg 573 255 s;
@@ -7747,7 +7749,7 @@ bang \; \$1-state symbol all-off \; \$1-state symbol pre-drop \; \$1-piano-del
 #X msg 328 139 0;
 #X obj 309 173 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 188 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 188 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 298 210 5 0 0 0 - - -, f 5;
 #X floatatom 161 214 5 0 0 0 - - -, f 5;
@@ -9652,7 +9654,7 @@ osc3a 0.166378 \, osc2d 0.023622 \, osc2c 0.0472441 \, osc2b 0.551181
 #X connect 28 0 20 0;
 #X connect 29 0 24 1;
 #X restore 603 325 pd space-drops;
-#N canvas 1330 151 438 608 pads 0;
+#N canvas 427 102 438 608 pads 0;
 #X obj 169 148 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
 -1 -1 2;
 #N canvas 0 22 1152 704 spad_presets 0;
@@ -9756,7 +9758,6 @@ osc1d 0.646142 \, osc1c 0.974882 \, osc1b 0.244094 \, osc1a 0.228346
 #X connect 15 0 4 0;
 #X restore 169 170 pd spad_presets;
 #X obj 58 220 pack f f;
-#X obj 58 248 synth spad \$0 s_spad spad;
 #X msg 277 159 \$1 0;
 #X obj 277 93 until;
 #X msg 277 70 127;
@@ -9828,37 +9829,38 @@ osc1d 0.646142 \, osc1c 0.974882 \, osc1b 0.244094 \, osc1a 0.228346
 #X obj 170 421 *~ 0;
 #X floatatom 197 389 5 0 0 0 - - -, f 5;
 #X msg 103 293 dry 0.35;
+#X obj 58 248 synth spad \$0 s_spad spad;
 #X connect 0 0 1 0;
-#X connect 1 0 10 0;
-#X connect 1 1 3 1;
-#X connect 2 0 3 0;
-#X connect 3 0 22 0;
-#X connect 4 0 3 0;
-#X connect 5 0 7 0;
-#X connect 6 0 5 0;
-#X connect 7 0 8 0;
-#X connect 7 0 9 0;
-#X connect 8 0 7 1;
-#X connect 9 0 4 0;
-#X connect 11 0 12 0;
-#X connect 12 0 0 0;
-#X connect 13 0 23 0;
-#X connect 14 0 17 0;
-#X connect 14 0 17 1;
-#X connect 14 0 26 0;
-#X connect 15 0 14 1;
-#X connect 16 0 18 0;
-#X connect 18 0 15 0;
-#X connect 20 0 19 0;
-#X connect 21 0 28 0;
-#X connect 22 0 14 0;
-#X connect 22 1 14 0;
-#X connect 23 0 24 0;
-#X connect 23 1 2 1;
-#X connect 24 0 2 0;
-#X connect 26 0 25 0;
-#X connect 27 0 26 1;
-#X connect 28 0 22 1;
+#X connect 1 0 9 0;
+#X connect 1 1 28 1;
+#X connect 2 0 28 0;
+#X connect 3 0 28 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 1;
+#X connect 8 0 3 0;
+#X connect 10 0 11 0;
+#X connect 11 0 0 0;
+#X connect 12 0 22 0;
+#X connect 13 0 16 0;
+#X connect 13 0 16 1;
+#X connect 13 0 25 0;
+#X connect 14 0 13 1;
+#X connect 15 0 17 0;
+#X connect 17 0 14 0;
+#X connect 19 0 18 0;
+#X connect 20 0 27 0;
+#X connect 21 0 13 0;
+#X connect 21 1 13 0;
+#X connect 22 0 23 0;
+#X connect 22 1 2 1;
+#X connect 23 0 2 0;
+#X connect 25 0 24 0;
+#X connect 26 0 25 1;
+#X connect 27 0 21 1;
+#X connect 28 0 21 0;
 #X restore 393 734 pd pads;
 #X obj 393 686 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
