@@ -2,7 +2,7 @@ import os
 import string
 from distutils.version import LooseVersion
 
-instruments = ['bass', 'chords', 'drums', 'voices']
+instruments = ['bass', 'chords', 'drums', 'voices', 'guitar']
 
 for instrument in instruments:
 	textfile = str(instrument) + "-info.txt"

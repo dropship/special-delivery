@@ -1,0 +1,7 @@
+guitar-count 140 6,
+guitar 140 0 140_22_2.mid,
+guitar 140 1 140_17_2.mid,
+guitar 140 2 140_18_2.mid,
+guitar 140 3 140_19_4.mid,
+guitar 140 4 140_20_2.mid,
+guitar 140 5 140_21_4.mid,
