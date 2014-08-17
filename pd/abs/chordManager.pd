@@ -1,4 +1,4 @@
-#N canvas 188 94 1051 758 10;
+#N canvas 119 174 1051 758 10;
 #X obj 551 289 + 1;
 #X obj 551 312 mod 4;
 #X obj 578 257 list length;
@@ -191,16 +191,9 @@
 #X obj 358 69 t b a b a;
 #X obj 636 163 list trim;
 #X obj 636 133 list prepend LOADING;
-#X msg 527 403 1 0 minb6 -1 -5 minb2 -1 -4 maj7#11 -1 5 min -1 \, 2
-0 minb6 -1 0 minb6 -1 0 minb6 -1 0 minb6 -1 \, 3 0 minb6 -1 -4 maj7#11
--1 5 min -1 -5 minb2 -1 \, 4 0 minb6 -1 -4 maj7#11 0 0 minb6 -1 -4
-maj7#11 0 \, 5 0 minb6 -1 -4 maj7#11 -1 5 min -1 1 maj7#11 -1 \, 6
-0 minb6 -1 -4 maj7#11 -1 5 min -1 1 7#11 -1 \, 7 5 min -1 -4 maj7#11
--1 -2 dom7 -1 0 minb6 -1 \, 8 0 minb6 -1 -4 maj7#11 -1 -2 7#11 -1 0
-maj -1 \, 9 0 minb6 -1 -2 dom7 -1 -3 min -1 -5 7alt -1 \, 10 0 minb6
--1 3 dom7 -1 -4 maj -1 1 7#11 -1 \, 11 0 min -1 2 min -1 0 min 3 2
-minb2 5 \, 12 0 min -1 -5 minb6 -1 -2 maj -1 5 dom7 -1 \, 13 0 minb6
--1 3 maj -1 -4 maj7#11 -1 -2 dom7 -1 \,;
+#X msg 527 403 1 0 maj 4 5 minmaj7 -1 -2 7#11 -1 -4 maj7#11 -1 \, 2
+0 maj -1 -5 dom7 11 -3 minb6 -1 5 maj7#11 -1 \, 3 5 maj7#11 -1 -5 dom7
+-1 4 minb2 -1 -3 minb6 -1 \,;
 #X obj 265 456 v \$1-CHORDS-progressionIndex;
 #X obj 265 486 *;
 #X obj 265 516 + 0.4999;
@@ -408,12 +401,12 @@ Index;
 #X connect 8 1 10 0;
 #X connect 10 0 9 0;
 #X connect 14 0 3 0;
-#X restore 265 147 pd controller;
-#X obj 165 49 loadbang;
-#X obj 165 91 f 140;
+#X restore 316 199 pd controller;
+#X obj 162 46 loadbang;
+#X obj 162 96 f 140;
 #X msg 41 186 ../resources/chords/\$1-\$2.txt;
 #X obj 162 71 t b b;
-#X obj 168 153 symbol MINOR;
+#X obj 214 130 symbol MINOR;
 #X obj 235 264 print chordProgr;
 #X obj 440 436 r generate-track-\$1;
 #X obj 459 489 random 100;
@@ -436,6 +429,10 @@ Index;
 -1 -1;
 #X obj 502 364 spigot 1;
 #X obj 547 341 r \$1-block-chord-progress;
+#X obj 224 154 symbol MAJOR;
+#X msg 302 132 bang;
+#X obj 309 90 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 1 0;
 #X connect 1 0 17 1;
 #X connect 2 0 3 0;
@@ -498,3 +495,6 @@ Index;
 #X connect 70 0 69 0;
 #X connect 71 0 19 0;
 #X connect 72 0 71 1;
+#X connect 73 0 29 1;
+#X connect 74 0 73 0;
+#X connect 75 0 65 0;

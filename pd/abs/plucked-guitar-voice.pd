@@ -31,6 +31,8 @@
 #X obj 52 433 pack f f;
 #X msg 52 461 YT-CLEAN-\$1X0\$2.aif;
 #X obj 52 131 - 12;
+#X obj 197 489 loadbang;
+#X msg 197 511 size 10;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 2 1 5 0;
@@ -78,3 +80,5 @@
 #X connect 29 0 30 0;
 #X connect 30 0 12 0;
 #X connect 31 0 6 0;
+#X connect 32 0 33 0;
+#X connect 33 0 3 1;
