@@ -28,12 +28,12 @@
 #X declare -path audio/fx/risers;
 #X declare -path abs/blockhead;
 #X declare -path resources/midi/guitar;
-#N canvas 140 369 858 652 io 0;
+#N canvas 140 369 858 652 io 1;
 #X obj 34 445 dac~;
 #X obj 34 237 *~;
 #X obj 134 237 *~;
 #X obj 149 213 lop~ 10;
-#X obj 149 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 149 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 149 140 loadbang;
 #X obj 134 331 clip~ -1 1;
@@ -57,12 +57,12 @@
 #X obj 252 445 list prepend DROP_STATE;
 #X obj 275 477 r 0-build-up;
 #X obj 275 499 list prepend BUILD;
-#X floatatom 350 424 5 0 0 0 - - -;
+#X floatatom 350 424 5 0 0 0 - - -, f 5;
 #X obj 411 496 change;
 #X obj 411 518 print DROP-STATE;
 #X obj 431 224 s autoplay;
-#X floatatom 232 179 5 0 0 0 - - -;
-#X floatatom 239 273 5 0 0 0 - - -;
+#X floatatom 232 179 5 0 0 0 - - -, f 5;
+#X floatatom 239 273 5 0 0 0 - - -, f 5;
 #X obj 34 283 *~ 0.08;
 #X obj 134 282 *~ 0.08;
 #X obj 457 250 route build drop reset;
@@ -79,7 +79,7 @@
 #X obj 215 114 sel 167;
 #X obj 139 371 loadbang;
 #X msg 139 393 0.07;
-#X floatatom 175 397 5 0 0 0 - - -;
+#X floatatom 175 397 5 0 0 0 - - -, f 5;
 #X obj 34 416 e_master 1000 1000;
 #X obj 383 594 s bass-wobble-event-frequency;
 #X obj 484 77 s bass-wobble-event-frequency;
@@ -93,6 +93,7 @@ NOTE-EVENTS DATETIME GPS DUB DUBSTEP;
 #X msg 591 168 DUB;
 #X obj 591 215 s set-ambient-genre;
 #X msg 618 193 DUBSTEP;
+#X obj 653 120 print PD-datetime-received;
 #X connect 1 0 33 0;
 #X connect 2 0 34 0;
 #X connect 3 0 2 1;
@@ -149,6 +150,7 @@ NOTE-EVENTS DATETIME GPS DUB DUBSTEP;
 #X connect 58 6 52 0;
 #X connect 58 7 53 0;
 #X connect 58 8 56 0;
+#X connect 58 8 62 0;
 #X connect 58 9 57 0;
 #X connect 58 10 59 0;
 #X connect 58 11 61 0;
