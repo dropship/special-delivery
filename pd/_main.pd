@@ -1,4 +1,4 @@
-#N canvas 849 160 339 290 10;
+#N canvas 86 488 339 290 10;
 #X declare -path abs;
 #X declare -path audio;
 #X declare -path rj;
@@ -28,12 +28,12 @@
 #X declare -path audio/fx/risers;
 #X declare -path abs/blockhead;
 #X declare -path resources/midi/guitar;
-#N canvas 140 369 858 652 io 1;
+#N canvas 115 154 858 652 io 0;
 #X obj 34 445 dac~;
 #X obj 34 237 *~;
 #X obj 134 237 *~;
 #X obj 149 213 lop~ 10;
-#X obj 149 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 149 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 149 140 loadbang;
 #X obj 134 331 clip~ -1 1;
