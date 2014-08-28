@@ -28,7 +28,7 @@
 #X declare -path audio/fx/risers;
 #X declare -path abs/blockhead;
 #X declare -path resources/midi/guitar;
-#N canvas 115 154 858 652 io 1;
+#N canvas 115 154 858 652 io 0;
 #X obj 34 555 dac~;
 #X obj 34 237 *~;
 #X obj 134 237 *~;
