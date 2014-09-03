@@ -1,4 +1,4 @@
-#N canvas 115 246 339 290 10;
+#N canvas 530 65 339 290 10;
 #X declare -path abs;
 #X declare -path audio;
 #X declare -path rj;
@@ -33,7 +33,7 @@
 #X obj 34 237 *~;
 #X obj 134 237 *~;
 #X obj 149 213 lop~ 10;
-#X obj 149 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 149 163 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 149 140 loadbang;
 #X obj 134 331 clip~ -1 1;
@@ -212,7 +212,7 @@ NOTE-EVENTS DATETIME GPS DUB DUBSTEP;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
 #X restore 25 29 pd init;
-#N canvas 948 286 704 672 samplebanks 0;
+#N canvas 476 97 704 672 samplebanks 0;
 #X obj 37 299 synth-load ARP-Poly-Lead;
 #X obj 342 182 print;
 #X msg 305 189 info;
@@ -286,7 +286,7 @@ NOTE-EVENTS DATETIME GPS DUB DUBSTEP;
 #X obj 45 385 u_samplebank melomantic-A melomantic-A.wav;
 #X obj 45 410 u_samplebank melomantic-B melomantic-B.wav;
 #X restore 38 609 pd huge-wave-forms;
-#X obj 37 269 u_samplebank ride-1 ride-1.wav;
+#X obj 37 239 u_samplebank ride-1 ride-1.wav;
 #X obj 37 329 u_samplebank square MachineDrumSquareC.wav;
 #N canvas 0 22 485 804 snares 0;
 #X obj 100 150 u_samplebank2 snare-6 snare-6.wav;
@@ -344,12 +344,10 @@ NOTE-EVENTS DATETIME GPS DUB DUBSTEP;
 #X obj 38 363 u_samplebank2 crash-boom crash-boom.wav;
 #X obj 38 383 u_samplebank2 echo-crash echo-crash.wav;
 #X obj 38 403 u_samplebank2 space-rise space-rise.wav;
-#X obj 308 127 u_samplebank2 rise-1 rise-1.wav;
-#X obj 308 147 u_samplebank2 Zenhiser-DL-RF01-rise-1 Zenhiser-DL-RF01-rise-1.wav
+#X obj 331 146 u_samplebank2 Zenhiser-DL-RF01-rise-1 Zenhiser-DL-RF01-rise-1.wav
 ;
 #X obj 39 433 u_samplebank2 door-bell door-bell.wav;
 #X obj 37 219 u_samplebank2 toms toms.wav;
-#X obj 337 405;
 #N canvas 168 322 436 481 risers 0;
 #X obj 39 79 u_samplebank2 small-riser-2 small-riser-2.wav;
 #X obj 39 104 u_samplebank2 small-riser-3 small-riser-3.wav;
@@ -357,51 +355,41 @@ NOTE-EVENTS DATETIME GPS DUB DUBSTEP;
 #X obj 39 54 u_samplebank2 small-riser-1 small-riser-1.wav;
 #X obj 39 29 u_samplebank2 small-riser-0 small-riser-0.wav;
 #X restore 205 533 pd risers;
-#X connect 2 0 16 0;
-#X connect 16 0 1 0;
+#X connect 2 0 15 0;
+#X connect 15 0 1 0;
 #X restore 25 103 pd samplebanks;
-#N canvas 88 400 223 155 effects 0;
-#N canvas 200 100 610 189 reverb 0;
-#X obj 39 106 e_platereverb;
-#X obj 39 56 catch~ REVERB-L;
-#X obj 76 78 catch~ REVERB-R;
-#X msg 183 45 dry 0.33 \, decay_diffusion2 0.68 \, decay_diffusion1
-0.74 \, input_diffusion2 0.779 \, excursion 0.53761 \, input_diffusion1
-0.685 \, decay 0.98 \, damping 4637 \, bandwidth 10000 \, predelay
-0 \,;
-#X obj 183 22 loadbang;
-#X obj 39 133 throw~ track-0-LEFT-OUT;
-#X obj 76 155 throw~ track-0-RIGHT-OUT;
-#X connect 0 0 5 0;
-#X connect 0 1 6 0;
+#X obj 172 12 loadbang;
+#X msg 172 35 \; pd dsp 1 \;;
+#X obj 25 206 track 0 \$0;
+#N canvas 201 538 450 300 events 0;
+#X obj 95 116 s event;
+#X obj 95 50 r 0-event;
+#X obj 118 83 print;
 #X connect 1 0 0 0;
-#X connect 2 0 0 1;
-#X connect 3 0 0 2;
-#X connect 4 0 3 0;
-#X restore 69 40 pd reverb;
-#X restore 25 179 pd effects;
-#N canvas 115 22 451 313 drums-patterns 0;
+#X restore 25 71 pd events;
+#X obj 172 71 EXTERN_DUMMY;
+#N canvas 115 22 166 367 kick-patterns 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array kick-pattr-1 32 float 3;
 #A 0 1 0 0 0.714286 0 0 0.428571 0 0 0 0.142857 0 0 0 0.857143 0 1
 0 0 0 0.142857 0.142857 0.571429 0 0 0 0.285714 0 0.142857 0 0.142857
 0.142857;
 #X coords 0 0 32 1 100 70 1;
-#X restore 22 20 graph;
+#X restore 22 50 graph;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array kick-pattr-2 32 float 3;
 #A 0 1 0 0.571429 0.285714 0.428571 0 0.285714 0 0 0 0.714286 0 0.857143
 0 0 0 1 0 0.142857 0 0 0 0.714286 0 0 0.428571 0.142857 0 0.857143
 0.142857 0 0.142857;
 #X coords 0 0 32 1 100 70 1;
-#X restore 22 108 graph;
+#X restore 22 138 graph;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array kick-pattr-3 32 float 3;
 #A 0 0.857143 0 0.714286 0.142857 0.428571 0.428571 0.428571 0 0 0.714286
 0 0 0.571429 0 0 1 1 0 0.142857 0 0 0 0.714286 0 0 0.428571 0.142857
 0 0.857143 0.142857 0 0.142857;
 #X coords 0 0 32 1 100 70 1;
-#X restore 22 208 graph;
+#X restore 22 238 graph;
 #N canvas 0 22 237 221 write-patterns 0;
 #X obj 73 143 tabwrite drum-pat-1;
 #X obj 39 29 r kick-pattr;
@@ -415,17 +403,7 @@ NOTE-EVENTS DATETIME GPS DUB DUBSTEP;
 #X connect 3 1 0 0;
 #X connect 3 2 0 1;
 #X connect 4 0 0 0;
-#X restore 131 50 pd write-patterns;
-#X text 133 15 Pattern storage;
-#X restore 25 124 pd drums-patterns;
-#X obj 172 12 loadbang;
-#X msg 172 35 \; pd dsp 1 \;;
-#X obj 25 206 track 0 \$0;
-#N canvas 201 538 450 300 events 0;
-#X obj 95 116 s event;
-#X obj 95 50 r 0-event;
-#X obj 118 83 print;
-#X connect 1 0 0 0;
-#X restore 25 71 pd events;
-#X obj 172 71 EXTERN_DUMMY;
-#X connect 5 0 6 0;
+#X restore 21 323 pd write-patterns;
+#X text 21 13 Pattern storage;
+#X restore 25 124 pd kick-patterns;
+#X connect 3 0 4 0;
