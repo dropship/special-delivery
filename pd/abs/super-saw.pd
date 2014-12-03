@@ -36,6 +36,7 @@
 #X obj 357 156 osc~;
 #X obj 357 178 *~ 100;
 #X obj 357 200 clip~ -1 1;
+#X text 185 14 Easy super-saw sound;
 #X connect 0 0 28 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;

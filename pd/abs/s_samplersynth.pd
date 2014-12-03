@@ -1,6 +1,6 @@
-#N canvas 144 58 1578 740 10;
-#X text 323 41 Arg 1 - \$0;
-#X text 323 61 Arg 2 - Sample-bank name;
+#N canvas 144 58 1150 736 10;
+#X text 315 101 Arg 1 - \$0;
+#X text 315 121 Arg 2 - Sample-bank name;
 #X obj 83 24 loadbang;
 #X msg 110 139 \$1;
 #X obj 110 164 until;
@@ -51,18 +51,18 @@
 #X obj 530 632 u_samplebankdyn \$1-\$2-33;
 #X obj 530 652 u_samplebankdyn \$1-\$2-34;
 #X obj 530 672 u_samplebankdyn \$1-\$2-35;
-#X text 323 81 Arg 3 - Samples count;
-#X text 323 101 Arg 4 - Starting note;
+#X text 315 141 Arg 3 - Samples count;
+#X text 315 161 Arg 4 - Starting note;
 #X obj 83 83 \$3;
 #X obj 110 284 + \$4;
 #X obj 110 350 pack f s \$1 f s;
 #X obj 197 317 symbol \$5;
-#X text 323 121 Arg 5 - File format;
+#X text 315 181 Arg 5 - File format;
 #X msg 110 385 \; \$3-\$2-\$4-open \$2\$1.\$5 \;;
 #X obj 83 50 t b b b;
 #X obj 110 261 * \$6;
 #X text 142 261 Note step amount;
-#X text 323 141 Arg 6 - Note step amount;
+#X text 315 201 Arg 6 - Note step amount;
 #X obj 740 452 u_samplebankdyn \$1-\$2-36;
 #X obj 740 472 u_samplebankdyn \$1-\$2-37;
 #X obj 740 492 u_samplebankdyn \$1-\$2-38;
@@ -89,6 +89,8 @@
 #X obj 950 672 u_samplebankdyn \$1-\$2-59;
 #X text 789 432 Octave 4;
 #X text 999 433 Octave 5;
+#X text 304 22 Automatic loading of samples for a sample synth instrument
+;
 #X connect 2 0 60 0;
 #X connect 3 0 4 0;
 #X connect 4 0 6 0;

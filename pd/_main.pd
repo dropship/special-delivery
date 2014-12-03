@@ -1,4 +1,4 @@
-#N canvas 530 65 585 308 10;
+#N canvas 831 118 561 254 10;
 #X declare -path abs;
 #X declare -path audio;
 #X declare -path rj;
@@ -220,6 +220,8 @@ the cranks;
 #X obj 301 660 del 100;
 #X obj 301 682 f 2;
 #X obj 301 704 s 0-build-up-type;
+#X obj 283 36 loadbang;
+#X msg 283 59 \; pd dsp 1 \;;
 #X connect 13 0 15 0;
 #X connect 13 0 16 0;
 #X connect 13 0 35 0;
@@ -228,6 +230,7 @@ the cranks;
 #X connect 17 0 18 0;
 #X connect 35 0 36 0;
 #X connect 36 0 37 0;
+#X connect 38 0 39 0;
 #X restore 25 29 pd init;
 #N canvas 476 97 445 523 samplebanks 0;
 #X obj 37 159 synth-load ARP-Poly-Lead;
@@ -376,57 +379,17 @@ Audacity.;
 #X restore 38 429 pd risers;
 #X text 36 13 Wherever possible \, samples were read directly from
 disk using [readsf~] rather than loading them into RAM.;
-#X text 36 43 If a sample needed to be more maniluable \, it's loaded
+#X text 36 43 If a sample needed to be more manipulable \, it's loaded
 into tables using [u_samplebank] \, here;
-#X restore 25 73 pd samplebanks;
-#X obj 402 12 loadbang;
-#X msg 402 35 \; pd dsp 1 \;;
+#X restore 25 71 pd samplebanks;
 #X obj 25 126 track 0 \$0;
-#X obj 402 71 EXTERN_DUMMY;
-#N canvas 115 22 166 367 kick-patterns 0;
-#N canvas 0 22 450 300 (subpatch) 0;
-#X array kick-pattr-1 32 float 3;
-#A 0 1 0 0 0.714286 0 0 0.428571 0 0 0 0.142857 0 0 0 0.857143 0 1
-0 0 0 0.142857 0.142857 0.571429 0 0 0 0.285714 0 0.142857 0 0.142857
-0.142857;
-#X coords 0 0 32 1 100 70 1;
-#X restore 22 50 graph;
-#N canvas 0 22 450 300 (subpatch) 0;
-#X array kick-pattr-2 32 float 3;
-#A 0 1 0 0.571429 0.285714 0.428571 0 0.285714 0 0 0 0.714286 0 0.857143
-0 0 0 1 0 0.142857 0 0 0 0.714286 0 0 0.428571 0.142857 0 0.857143
-0.142857 0 0.142857;
-#X coords 0 0 32 1 100 70 1;
-#X restore 22 138 graph;
-#N canvas 0 22 450 300 (subpatch) 0;
-#X array kick-pattr-3 32 float 3;
-#A 0 0.857143 0 0.714286 0.142857 0.428571 0.428571 0.428571 0 0 0.714286
-0 0 0.571429 0 0 1 1 0 0.142857 0 0 0 0.714286 0 0 0.428571 0.142857
-0 0.857143 0.142857 0 0.142857;
-#X coords 0 0 32 1 100 70 1;
-#X restore 22 238 graph;
-#N canvas 0 22 237 221 write-patterns 0;
-#X obj 73 143 tabwrite drum-pat-1;
-#X obj 39 29 r kick-pattr;
-#X obj 39 52 list trim;
-#X obj 39 75 unpack s f f;
-#X msg 61 110 set kick-pattr-3;
-#X obj 26 103 print;
-#X connect 1 0 2 0;
-#X connect 1 0 5 0;
-#X connect 2 0 3 0;
-#X connect 3 1 0 0;
-#X connect 3 2 0 1;
-#X connect 4 0 0 0;
-#X restore 21 323 pd write-patterns;
-#X text 21 13 Pattern storage;
-#X restore 25 94 pd kick-patterns;
+#X obj 402 61 EXTERN_DUMMY;
 #X text 77 30 Paths and defaults;
 #X text 65 51 Audio and messaging inputs/outputs;
 #X text 96 127 The actual music making stuff;
-#X text 21 150 All done within an abstraction because \, originally
-\, the plan was to create two entirely separate instances of absolutely
-everything \, and then crossfade between the two complete tracks. This
-wasn't possible for performance reasons \, and would actually have
-been a bad idea anyway for musical reasons...;
-#X connect 3 0 4 0;
+#X text 21 150 All of the music is done within an abstraction because
+\, originally \, the plan was to create two entirely separate instances
+of absolutely everything \, and then crossfade between them. This wasn't
+possible for performance reasons \, and it turns out it would actually
+have been a bad idea anyway for musical reasons...;
+#X text 401 40 Dummy controls;
