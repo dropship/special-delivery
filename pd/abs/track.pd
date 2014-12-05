@@ -18,7 +18,7 @@
 #X obj 194 381 s \$1-event;
 #X msg 194 358 hit-snare bang;
 #X obj 63 245 r \$1-snare-bang;
-#X msg 43 276 snare-16;
+#X msg 43 276 snare-24;
 #X obj 197 200 mod 100;
 #X obj 278 85 r \$1-state;
 #X obj 278 107 sel drop;
@@ -169,9 +169,9 @@
 #X obj 19 335 sel 1;
 #X obj 106 252 r generate-track-\$1;
 #N canvas 772 124 447 330 new-sequence 0;
-#X msg 48 12 1 0 1 0 0 0 1 1 0 0 1 0 1 0 0 0;
+#X msg 48 12 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 0;
 #X msg 75 168 set \, adddollar \$1;
-#X msg 48 191 \$2;
+#X msg 48 191 \$4;
 #X obj 75 145 + 1;
 #N canvas 0 22 450 300 new-list 0;
 #X obj 51 101 until;
@@ -258,7 +258,7 @@
 #X obj 241 280 list prepend;
 #X obj 241 301 list trim;
 #X obj 241 333 route 0 1;
-#X obj 310 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 310 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 241 404 lop~ 3500;
 #X obj 145 414 inlet;
@@ -321,7 +321,7 @@
 #X obj 21 668 *~;
 #X obj 68 668 *~;
 #X obj 83 642 line~;
-#X msg 21 457 kick-2;
+#X msg 21 457 kick-4;
 #X msg 39 424 set kick-\$1;
 #X obj 83 619 inlet;
 #X obj 23 84 rm_prob \$0 0 kick;
@@ -538,7 +538,7 @@
 #X obj 21 250 spigot 1;
 #X obj 192 248 spigot 1;
 #X obj 91 212 r \$1-kick-block;
-#X obj 104 251 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 104 251 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 305 303 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -600,7 +600,7 @@
 #X connect 75 0 28 0;
 #X restore 196 267 pd kick;
 #X obj 206 406 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3900 1;
+-1 -1 0 1;
 #X obj 206 311 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 3900 1;
 #X obj 206 218 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
@@ -1207,7 +1207,7 @@ they were anything other than just the standard 2 and 4 back-beat)
 #X restore 196 545 pd drum-loop;
 #X obj 196 473 r \$1-drum-loop-vol;
 #X obj 196 682 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3900 1;
+-1 -1 0 1;
 #X obj 196 659 r \$1-toms-vol;
 #N canvas 308 47 638 552 toms 0;
 #X obj 34 470 *~;
@@ -1323,7 +1323,7 @@ they were anything other than just the standard 2 and 4 back-beat)
 #N canvas 0 22 325 310 trap 0;
 #X msg 19 245 1;
 #X obj 48 221 spigot;
-#X obj 81 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 81 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 98 221 spigot;
 #X obj 131 196 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -1933,7 +1933,7 @@ the next one comes in;
 #X restore 359 542 pd shepard-risers;
 #X obj 359 474 r \$1-shepard-risers-vol;
 #X obj 359 585 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3900 1;
+-1 -1 0 1;
 #X obj 359 563 r \$1-risers-vol;
 #N canvas 38 62 367 378 breakdown-risers 0;
 #X obj 26 265 *~;
@@ -1988,9 +1988,9 @@ the next one comes in;
 #X msg 42 237 crash-boom;
 #X obj 42 88 mod 256;
 #X obj 172 283 s_playtable2;
-#X msg 186 196 set Zenhiser-DL-RF01-\$1;
-#X msg 172 236 Zenhiser-DL-RF01-2;
 #X obj 186 172 random 16;
+#X msg 186 196 set DL-RF01-\$1;
+#X msg 172 236 DL-RF01-13;
 #X connect 0 0 4 0;
 #X connect 1 0 5 0;
 #X connect 2 0 1 1;
@@ -1999,16 +1999,16 @@ the next one comes in;
 #X connect 3 1 1 0;
 #X connect 6 0 11 0;
 #X connect 7 0 2 0;
-#X connect 8 0 15 0;
+#X connect 8 0 13 0;
 #X connect 9 0 10 0;
-#X connect 9 0 14 0;
+#X connect 9 0 15 0;
 #X connect 10 0 3 0;
 #X connect 11 0 9 0;
 #X connect 12 0 0 0;
 #X connect 12 1 1 0;
 #X connect 13 0 14 0;
-#X connect 14 0 12 0;
-#X connect 15 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 12 0;
 #X restore 359 265 pd fx;
 #X obj 359 197 r \$1-fx-vol;
 #X text 399 174 EFFECTS;
@@ -2113,7 +2113,7 @@ the next one comes in;
 #X obj 177 813 delread~ \$1-reggae-vox-del-c 428.56;
 #X obj 115 749 delread~ \$1-reggae-vox-del-l 857.12;
 #X obj 512 456 vsl 15 40 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2340 1;
+-1 -1 0 1;
 #X obj 135 185 mod 256;
 #X obj 130 601 r \$1-reggae-vox-del;
 #X obj 512 387 del;
@@ -2542,7 +2542,7 @@ should be faded up.;
 #X obj 313 109 / 4;
 #X obj 27 55 r \$0-kick;
 #X obj 282 262 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 3;
 #X obj 27 566 bass-1;
 #X obj 112 267 unpack f f f;
 #X obj 27 284 f;
@@ -2651,13 +2651,13 @@ should be faded up.;
 #X obj 116 16 inlet;
 #X msg 260 203 clear \, bang;
 #X msg 260 249 add2 \$1;
-#X msg 116 283 2 1 0 2 0 1 0 1 2 2;
+#X msg 116 283 0 1 2 0 1 2 1 2 0 0 1 2 0 0;
 #X obj 239 13 inlet;
 #X obj 315 57 moses 32;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$8;
+#X msg 116 439 \$4;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -2725,13 +2725,13 @@ should be faded up.;
 #X obj 116 16 inlet;
 #X msg 195 205 clear \, bang;
 #X msg 195 251 add2 \$1;
-#X msg 116 283 2 1 0 2 1 0 2 1 0 2;
+#X msg 116 283 0 2 1 2 1 0 0 2 1 2 2 1 0 1;
 #X obj 239 13 inlet;
 #X obj 315 57 moses 32;
 #X msg 342 134 set;
 #X obj 315 82 sel 0;
 #X msg 143 386 set \, adddollar \$1;
-#X msg 116 439 \$8;
+#X msg 116 439 \$4;
 #X obj 143 363 + 1;
 #X obj 143 341 mod 16;
 #X obj 116 464 outlet;
@@ -2908,7 +2908,7 @@ Just adding fifths or octaves tp the bass note as time goes on.;
 #X msg 46 107 0 0 1 1 2 0 1 0 2 1 0 0 3 3 1 2 0 1 3 1 3 1 3 1 0 0 1
 2 1 2 2 2;
 #X msg 73 193 set \, adddollar \$1;
-#X msg 46 216 \$27;
+#X msg 46 216 \$11;
 #X obj 73 170 + 1;
 #N canvas 653 493 268 247 new-list 0;
 #X obj 51 101 until;
@@ -3256,7 +3256,7 @@ melody sporadically jump up or down an octave or a fifth.;
 #X connect 9 0 10 0;
 #X restore 521 630 pd display;
 #X obj 521 653 vsl 15 50 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2194 1;
+-1 -1 0 1;
 #X obj 522 764 - 12;
 #X obj 522 876 *~ 1;
 #X obj 580 731 spigot;
@@ -3887,7 +3887,7 @@ functionality.;
 #X msg 84 441 \$1 1000;
 #X obj 84 371 spigot;
 #X obj 39 302 t f f b;
-#X obj 117 351 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 117 351 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 84 328 spigot;
 #X obj 149 265 random 2;
@@ -3943,9 +3943,9 @@ functionality.;
 #N canvas 516 91 887 840 where-we-belong-drop-break 0;
 #X obj 67 23 r \$1-tick;
 #N canvas 625 151 306 301 new-sequence 0;
-#X msg 46 31 1 0 1 0 0 0 0 0 0 1 1 0 1 0 0 0;
+#X msg 46 31 1 0 1 1 0 1 0 0 1 0 0 0 0 0 0 1;
 #X msg 73 107 set \, adddollar \$1;
-#X msg 46 130 \$6;
+#X msg 46 130 \$5;
 #X obj 73 84 + 1;
 #N canvas 493 226 268 247 new-list 0;
 #X obj 51 101 until;
@@ -3998,9 +3998,9 @@ functionality.;
 #X obj 161 155 mod 32;
 #X obj 67 781 notes 6 65 0 2 3 7 9 10;
 #N canvas 767 140 380 268 new-sequence 0;
-#X msg 45 46 -2 -3 -1 1 0 -2 0 0 1 3 4 6 7 6 5 7;
+#X msg 45 46 -2 -3 -3 -4 -3 -1 -3 -1 1 0 -1 -3 -1 0 -1 0;
 #X msg 72 122 set \, adddollar \$1;
-#X msg 45 145 \$6;
+#X msg 45 145 \$5;
 #X obj 72 99 + 1;
 #N canvas 966 280 218 303 new-list 0;
 #X obj 47 92 until;
@@ -4631,7 +4631,7 @@ osc3a 0.166378 \, osc2d 0.023622 \, osc2c 0.0472441 \, osc2b 0.551181
 #X restore 218 179 pd juno-settings;
 #X obj 218 133 random 4;
 #X obj 218 157 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 0;
 #X msg 122 170 \$1 0;
 #X obj 122 104 until;
 #X msg 122 81 127;
@@ -7465,7 +7465,7 @@ state;
 #X obj 422 326 mod 256;
 #X obj 422 370 list trim;
 #X obj 503 327 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
--1 -1 5;
+-1 -1 0;
 #N canvas 156 276 489 337 drum-fill 0;
 #X obj 196 239 s \$1-drum-fill;
 #X obj 196 194 spigot;
@@ -7577,7 +7577,7 @@ state;
 #X msg 217 368 0;
 #X msg 249 369 0 \, 1 1;
 #X obj 224 323 spigot;
-#X obj 257 280 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 257 280 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 285 257 0;
 #X msg 257 257 1;
@@ -8283,7 +8283,7 @@ intervals to be used by other parts of the patch.;
 #X msg 301 197 \; \$1-new-chord-sequence bang \;;
 #X msg 1303 670 \; \$1-kick-vol 0 \; \$1-snare-vol 0 \;;
 #X obj 53 260 nbx 2 40 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 30
--262130 -1 -1 3 256;
+-262130 -1 -1 2 256;
 #X obj 672 407 \$1;
 #X obj 281 467 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -8568,7 +8568,7 @@ intervals to be used by other parts of the patch.;
 #X obj 221 214 \$1;
 #X msg 221 236 \; \$1-new-chord-sequence bang \;;
 #X obj 53 260 nbx 2 40 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 30
--262130 -1 -1 3 256;
+-262130 -1 -1 0 256;
 #X obj 482 427 \$1;
 #X obj 97 461 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -8821,15 +8821,6 @@ bang \; \$1-drum-loop-vol 1 \;;
 0 \; \$1-super-saw-vol 0 \; \$1-piano-del 0 \; \$1-piano-lop-freq 20000
 \; \$1-block-chord-progress 1 \; \$1-reggae-vox-vol 0 \; \$1-guitar-vol
 0 \;;
-#X msg 630 182 \; \$1-reset-timebase-soft bang \; generate-track-\$1
-bang \; \$1-build-up-spigot 0 \; \$1-drop-bass-vol 0 \; \$1-hats-vol
-0 \; \$1-crashes-vol 0 \; \$1-snare-vol 0 \; \$1-kick-vol 0 \; \$1-fx-vol
-0 \; \$1-atmos-vol 0 \; \$1-drum-loop-vol 0 \; \$1-piano-vol 0 \; \$1-build-up
-0 \; \$1-pre-drop-bass-vol 0 \; \$1-rev-swoop-vol 0 \; \$1-super-saw-vol
-0 \; \$1-piano-del 0 \; \$1-juno-vol 0 \; \$1-state symbol pre-build
-\; \$1-reggae-vox-vol 1 \; \$1-block-chord-progress 1 \; \$1-synth1-vol
-0 \; set-ambient-genre DUBSTEP \; \$1-ambient-genre dubstep \; \$1-all-dub-chamber-sends
-0 1000 \;;
 #X msg 70 183 \; \$1-build-up 0 \; pre-generate-track-\$1 bang \; generate-track-\$1
 bang \; set-ambient-genre DUBSTEP \; \$1-ambient-genre dubstep \; \$1-build-delay-amt
 0 \; \$1-reset-timebase-soft 1 \; \$1-drop-bass-vol 1 \; \$1-hats-vol
@@ -8866,8 +8857,16 @@ different elements of the patch;
 #X obj 1139 148 s \$1-reset;
 #X obj 1139 104 r reset;
 #X obj 1139 126 sel 1;
+#X msg 630 182 \; \$1-reset-timebase-soft bang \; generate-track-\$1
+bang \; \$1-drop-bass-vol 0 \; \$1-hats-vol 0 \; \$1-crashes-vol 0
+\; \$1-snare-vol 0 \; \$1-kick-vol 0 \; \$1-fx-vol 0 \; \$1-drum-loop-vol
+0 \; \$1-piano-vol 0 \; \$1-build-up 0 \; \$1-pre-drop-bass-vol 0 \;
+\$1-rev-swoop-vol 0 \; \$1-super-saw-vol 0 \; \$1-piano-del 0 \; \$1-juno-vol
+0 \; \$1-state symbol pre-build \; \$1-reggae-vox-vol 1 \; \$1-block-chord-progress
+1 \; \$1-synth1-vol 0 \; set-ambient-genre DUBSTEP \; \$1-ambient-genre
+dubstep \; \$1-all-dub-chamber-sends 0 1000 \;;
 #X connect 0 0 31 0;
-#X connect 1 0 40 0;
+#X connect 1 0 39 0;
 #X connect 2 0 23 0;
 #X connect 3 0 4 0;
 #X connect 4 0 34 0;
@@ -8893,7 +8892,7 @@ different elements of the patch;
 #X connect 21 0 22 0;
 #X connect 22 0 24 0;
 #X connect 23 0 24 0;
-#X connect 24 0 39 0;
+#X connect 24 0 64 0;
 #X connect 26 0 27 0;
 #X connect 27 0 25 0;
 #X connect 28 0 37 0;
@@ -8905,26 +8904,26 @@ different elements of the patch;
 #X connect 33 0 18 0;
 #X connect 34 0 18 0;
 #X connect 36 0 18 0;
-#X connect 41 0 15 0;
-#X connect 42 0 36 0;
-#X connect 44 0 46 0;
-#X connect 44 0 49 0;
-#X connect 45 0 44 0;
-#X connect 46 0 50 0;
-#X connect 50 0 47 0;
-#X connect 50 0 48 0;
-#X connect 52 0 53 0;
-#X connect 53 0 51 0;
-#X connect 54 0 56 0;
-#X connect 56 0 55 0;
-#X connect 57 0 60 0;
-#X connect 58 0 59 0;
-#X connect 59 0 56 1;
-#X connect 60 0 55 0;
-#X connect 60 1 56 1;
-#X connect 61 0 57 0;
-#X connect 63 0 64 0;
-#X connect 64 0 62 0;
+#X connect 40 0 15 0;
+#X connect 41 0 36 0;
+#X connect 43 0 45 0;
+#X connect 43 0 48 0;
+#X connect 44 0 43 0;
+#X connect 45 0 49 0;
+#X connect 49 0 46 0;
+#X connect 49 0 47 0;
+#X connect 51 0 52 0;
+#X connect 52 0 50 0;
+#X connect 53 0 55 0;
+#X connect 55 0 54 0;
+#X connect 56 0 59 0;
+#X connect 57 0 58 0;
+#X connect 58 0 55 1;
+#X connect 59 0 54 0;
+#X connect 59 1 55 1;
+#X connect 60 0 56 0;
+#X connect 62 0 63 0;
+#X connect 63 0 61 0;
 #X restore 55 134 pd states;
 #N canvas 473 79 669 738 end-sequence 0;
 #X obj 36 449 osc~;
@@ -9047,8 +9046,8 @@ transition drop back into the ambient section.;
 #X connect 52 0 43 0;
 #X connect 52 0 50 0;
 #X restore 205 134 pd end-sequence;
-#X text 372 94 Reactify 2014;
-#X text 372 74 Anita's Dropship generative Dubstep machine;
+#X text 372 84 Reactify 2014;
+#X text 372 64 Anita's Dropship generative Dubstep machine;
 #X text 234 28 STRUCTURE;
 #X text 74 28 ADMIN;
 #N canvas 642 123 1019 803 dub-chamber 0;
@@ -9308,6 +9307,7 @@ be sent to the delay;
 #X connect 14 0 2 0;
 #X connect 14 1 1 0;
 #X restore 359 784 pd space-fillers;
+#X text 372 104 http://dropship.github.io/;
 #X connect 7 0 2 0;
 #X connect 7 0 4 0;
 #X connect 8 0 5 0;

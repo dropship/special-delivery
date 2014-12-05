@@ -28,6 +28,8 @@
 #X declare -path audio/fx/risers;
 #X declare -path abs/blockhead;
 #X declare -path resources/midi/guitar;
+#X declare -path audio/drums/kicks;
+#X declare -path audio/drums/other;
 #N canvas 115 154 1351 821 io 0;
 #X obj 34 655 dac~;
 #X obj 34 257 *~;
@@ -181,7 +183,7 @@ the cranks;
 #X connect 62 0 0 1;
 #X connect 78 0 77 0;
 #X restore 25 50 pd io;
-#N canvas 570 70 419 774 init 0;
+#N canvas 570 70 523 841 init 0;
 #X obj 62 56 declare -path abs;
 #X obj 62 76 declare -path audio;
 #X obj 62 36 declare -path rj;
@@ -191,37 +193,39 @@ the cranks;
 #X obj 62 177 declare -path audio/drums;
 #X obj 62 237 declare -path audio/fx/falls;
 #X obj 62 277 declare -path audio/drums/loops;
-#X obj 62 297 declare -path resources/midi/bass;
-#X obj 62 317 declare -path resources/midi/chords;
-#X obj 62 337 declare -path resources/midi/drums;
-#X obj 62 357 declare -path resources/midi/voices;
-#X obj 63 638 loadbang;
-#X obj 63 682 v \$0-TIMEBASE-BPM;
-#X msg 63 660 140;
-#X msg 177 659 MINOR;
-#X obj 177 681 symbol;
-#X obj 177 704 s \$0-CHORDS-maj/min;
-#X obj 62 397 declare -path libs/rm;
-#X obj 62 437 declare -path audio/waveforms;
+#X obj 62 377 declare -path resources/midi/bass;
+#X obj 62 397 declare -path resources/midi/chords;
+#X obj 62 417 declare -path resources/midi/drums;
+#X obj 62 437 declare -path resources/midi/voices;
+#X obj 63 678 loadbang;
+#X obj 63 722 v \$0-TIMEBASE-BPM;
+#X msg 63 700 140;
+#X msg 177 699 MINOR;
+#X obj 177 721 symbol;
+#X obj 177 744 s \$0-CHORDS-maj/min;
+#X obj 62 477 declare -path libs/rm;
+#X obj 62 517 declare -path audio/waveforms;
 #X obj 62 96 declare -path abs/dmx;
-#X obj 62 457 declare -path audio/waveforms/huge;
+#X obj 62 537 declare -path audio/waveforms/huge;
 #X obj 62 116 declare -path abs/huge;
 #X obj 62 197 declare -path audio/vox;
-#X obj 62 477 declare -path abs/comp;
-#X obj 62 497 declare -path audio/drums/snares;
-#X obj 62 517 declare -path audio/drums/crashes;
-#X obj 62 537 declare -path audio/vox/pon-de-floor;
-#X obj 62 417 declare -path libs/cyclone;
-#X obj 62 577 declare -path audio/synths/Electric-Guitar-Muted;
-#X obj 62 557 declare -path audio/vox/reggae-vox;
+#X obj 62 557 declare -path abs/comp;
+#X obj 62 337 declare -path audio/drums/snares;
+#X obj 62 357 declare -path audio/drums/crashes;
+#X obj 62 577 declare -path audio/vox/pon-de-floor;
+#X obj 62 497 declare -path libs/cyclone;
+#X obj 62 617 declare -path audio/synths/Electric-Guitar-Muted;
+#X obj 62 597 declare -path audio/vox/reggae-vox;
 #X obj 62 257 declare -path audio/fx/risers;
-#X obj 62 597 declare -path abs/blockhead;
-#X obj 62 377 declare -path resources/midi/guitar;
-#X obj 301 660 del 100;
-#X obj 301 682 f 2;
-#X obj 301 704 s 0-build-up-type;
+#X obj 62 637 declare -path abs/blockhead;
+#X obj 62 457 declare -path resources/midi/guitar;
+#X obj 301 700 del 100;
+#X obj 301 722 f 2;
+#X obj 301 744 s 0-build-up-type;
 #X obj 283 36 loadbang;
 #X msg 283 59 \; pd dsp 1 \;;
+#X obj 62 297 declare -path audio/drums/kicks;
+#X obj 62 317 declare -path audio/drums/other;
 #X connect 13 0 15 0;
 #X connect 13 0 16 0;
 #X connect 13 0 35 0;
@@ -232,42 +236,8 @@ the cranks;
 #X connect 36 0 37 0;
 #X connect 38 0 39 0;
 #X restore 25 29 pd init;
-#N canvas 476 97 445 523 samplebanks 0;
-#X obj 37 159 synth-load ARP-Poly-Lead;
-#N canvas 0 22 436 481 Zenhiser-falls 0;
-#X obj 39 29 u_samplebank2 Zenhiser-DL-RF01-0 Zenhiser-DL-RF01-0.wav
-;
-#X obj 39 54 u_samplebank2 Zenhiser-DL-RF01-1 Zenhiser-DL-RF01-1.wav
-;
-#X obj 39 79 u_samplebank2 Zenhiser-DL-RF01-2 Zenhiser-DL-RF01-2.wav
-;
-#X obj 39 104 u_samplebank2 Zenhiser-DL-RF01-3 Zenhiser-DL-RF01-3.wav
-;
-#X obj 39 129 u_samplebank2 Zenhiser-DL-RF01-4 Zenhiser-DL-RF01-4.wav
-;
-#X obj 39 154 u_samplebank2 Zenhiser-DL-RF01-5 Zenhiser-DL-RF01-5.wav
-;
-#X obj 39 179 u_samplebank2 Zenhiser-DL-RF01-6 Zenhiser-DL-RF01-6.wav
-;
-#X obj 39 204 u_samplebank2 Zenhiser-DL-RF01-7 Zenhiser-DL-RF01-7.wav
-;
-#X obj 39 229 u_samplebank2 Zenhiser-DL-RF01-8 Zenhiser-DL-RF01-8.wav
-;
-#X obj 39 254 u_samplebank2 Zenhiser-DL-RF01-9 Zenhiser-DL-RF01-9.wav
-;
-#X obj 39 279 u_samplebank2 Zenhiser-DL-RF01-10 Zenhiser-DL-RF01-10.wav
-;
-#X obj 39 304 u_samplebank2 Zenhiser-DL-RF01-11 Zenhiser-DL-RF01-11.wav
-;
-#X obj 39 329 u_samplebank2 Zenhiser-DL-RF01-12 Zenhiser-DL-RF01-12.wav
-;
-#X obj 39 354 u_samplebank2 Zenhiser-DL-RF01-13 Zenhiser-DL-RF01-13.wav
-;
-#X obj 39 379 u_samplebank2 Zenhiser-DL-RF01-14 Zenhiser-DL-RF01-14.wav
-;
-#X obj 39 404 u_samplebank2 Zenhiser-DL-RF01-15 Zenhiser-DL-RF01-15.wav
-;
-#X restore 38 369 pd Zenhiser-falls;
+#N canvas 476 97 426 301 samplebanks 0;
+#X obj 37 89 synth-load ARP-Poly-Lead;
 #N canvas 482 95 450 300 kicks 0;
 #X obj 61 33 u_samplebank2 kick-0 kick-0.wav;
 #X obj 61 58 u_samplebank2 kick-1 kick-1.wav;
@@ -278,14 +248,7 @@ the cranks;
 #X obj 61 208 u_samplebank2 kick-7 kick-7.wav;
 #X obj 61 233 u_samplebank2 kick-8 kick-8.wav;
 #X obj 61 108 u_samplebank2 kick-3 kick-3.wav;
-#X restore 38 409 pd kicks;
-#N canvas 0 22 450 300 AKWaveForms 0;
-#X obj 45 35 u_samplebank AKWF-0 AKWF-0.wav;
-#X obj 45 60 u_samplebank AKWF-1 AKWF-1.wav;
-#X obj 45 85 u_samplebank AKWF-2 AKWF-2.wav;
-#X obj 45 110 u_samplebank AKWF-3 AKWF-3.wav;
-#X obj 45 135 u_samplebank AKWF-4 AKWF-4.wav;
-#X restore 38 449 pd AKWaveForms;
+#X restore 38 114 pd kicks;
 #N canvas 460 196 444 503 huge-wave-forms 0;
 #X obj 45 195 u_samplebank gentle-speech-A gentle-speech-A.wav;
 #X obj 45 95 u_samplebank strontium-A strontium-A.wav;
@@ -307,9 +270,7 @@ the cranks;
 Audacity.;
 #X text 44 41 More info at: http://dropship.github.io/update/2014/05/12/diving-into-the-spiders-web.html
 ;
-#X restore 38 469 pd huge-wave-forms;
-#X obj 37 129 u_samplebank ride-1 ride-1.wav;
-#X obj 37 189 u_samplebank square MachineDrumSquareC.wav;
+#X restore 38 259 pd huge-wave-forms;
 #N canvas 0 22 485 804 snares 0;
 #X obj 100 150 u_samplebank2 snare-6 snare-6.wav;
 #X obj 100 175 u_samplebank2 snare-7 snare-7.wav;
@@ -350,7 +311,7 @@ Audacity.;
 #X obj 100 75 u_samplebank2 snare-3 snare-3.wav;
 #X obj 100 100 u_samplebank2 snare-4 snare-4.wav;
 #X obj 100 125 u_samplebank2 snare-5 snare-5.wav;
-#X restore 38 389 pd snares;
+#X restore 38 134 pd snares;
 #N canvas 0 22 450 300 crashes 0;
 #X obj 66 54 u_samplebank2 crash-1 crash-1.wav;
 #X obj 66 79 u_samplebank2 crash-2 crash-2.wav;
@@ -361,26 +322,71 @@ Audacity.;
 #X obj 66 204 u_samplebank2 crash-7 crash-7.wav;
 #X obj 66 229 u_samplebank2 crash-8 crash-8.wav;
 #X obj 66 30 u_samplebank2 crash-0 crash-9.wav;
-#X restore 39 320 pd crashes;
-#X obj 37 89 u_samplebank2 hat-3 hat-3.wav;
-#X obj 38 223 u_samplebank2 crash-boom crash-boom.wav;
-#X obj 38 243 u_samplebank2 echo-crash echo-crash.wav;
-#X obj 38 263 u_samplebank2 space-rise space-rise.wav;
-#X obj 39 293 u_samplebank2 door-bell door-bell.wav;
-#X obj 37 109 u_samplebank2 toms toms.wav;
+#X restore 38 154 pd crashes;
 #N canvas 168 322 373 227 risers 0;
 #X obj 39 79 u_samplebank2 small-riser-2 small-riser-2.wav;
 #X obj 39 104 u_samplebank2 small-riser-3 small-riser-3.wav;
 #X obj 39 129 u_samplebank2 small-riser-4 small-riser-4.wav;
 #X obj 39 54 u_samplebank2 small-riser-1 small-riser-1.wav;
 #X obj 39 29 u_samplebank2 small-riser-0 small-riser-0.wav;
-#X obj 39 154 u_samplebank2 Zenhiser-DL-RF01-rise-1 Zenhiser-DL-RF01-rise-1.wav
+#X obj 39 154 u_samplebank2 DL-RF01-rise-1 DL-RF01-rise-1.wav
 ;
-#X restore 38 429 pd risers;
+#X obj 39 193 u_samplebank2 space-rise space-rise.wav;
+#X restore 38 219 pd risers;
 #X text 36 13 Wherever possible \, samples were read directly from
 disk using [readsf~] rather than loading them into RAM.;
 #X text 36 43 If a sample needed to be more manipulable \, it's loaded
 into tables using [u_samplebank] \, here;
+#N canvas 0 22 436 481 falls 0;
+#X obj 39 54 u_samplebank2 DL-RF01-1 DL-RF01-1.wav
+;
+#X obj 39 79 u_samplebank2 DL-RF01-2 DL-RF01-2.wav
+;
+#X obj 39 104 u_samplebank2 DL-RF01-3 DL-RF01-3.wav
+;
+#X obj 39 129 u_samplebank2 DL-RF01-4 DL-RF01-4.wav
+;
+#X obj 39 154 u_samplebank2 DL-RF01-5 DL-RF01-5.wav
+;
+#X obj 39 179 u_samplebank2 DL-RF01-6 DL-RF01-6.wav
+;
+#X obj 39 204 u_samplebank2 DL-RF01-7 DL-RF01-7.wav
+;
+#X obj 39 229 u_samplebank2 DL-RF01-8 DL-RF01-8.wav
+;
+#X obj 39 254 u_samplebank2 DL-RF01-9 DL-RF01-9.wav
+;
+#X obj 39 279 u_samplebank2 DL-RF01-10 DL-RF01-10.wav
+;
+#X obj 39 304 u_samplebank2 DL-RF01-11 DL-RF01-11.wav
+;
+#X obj 39 329 u_samplebank2 DL-RF01-12 DL-RF01-12.wav
+;
+#X obj 39 354 u_samplebank2 DL-RF01-13 DL-RF01-13.wav
+;
+#X obj 39 379 u_samplebank2 DL-RF01-14 DL-RF01-14.wav
+;
+#X obj 39 404 u_samplebank2 DL-RF01-15 DL-RF01-15.wav
+;
+#X obj 39 435 u_samplebank2 crash-boom crash-boom.wav;
+#X obj 39 455 u_samplebank2 echo-crash echo-crash.wav;
+#X obj 39 29 u_samplebank2 DL-RF01-0 DL-RF01-0.wav;
+#X restore 38 199 pd falls;
+#N canvas 0 22 299 150 other-drums 0;
+#X obj 37 73 u_samplebank ride-1 ride-1.wav;
+#X obj 37 33 u_samplebank2 hat-3 hat-3.wav;
+#X obj 37 53 u_samplebank2 toms toms.wav;
+#X obj 37 97 u_samplebank2 door-bell door-bell.wav;
+#X restore 38 174 pd other-drums;
+#N canvas 0 22 362 233 waveforms 0;
+#X obj 45 35 u_samplebank AKWF-0 AKWF-0.wav;
+#X obj 45 60 u_samplebank AKWF-1 AKWF-1.wav;
+#X obj 45 85 u_samplebank AKWF-2 AKWF-2.wav;
+#X obj 45 110 u_samplebank AKWF-3 AKWF-3.wav;
+#X obj 45 135 u_samplebank AKWF-4 AKWF-4.wav;
+#X obj 45 161 u_samplebank square MachineDrumSquareC.wav;
+#X text 44 9 http://www.adventurekid.se/akrt/waveforms/;
+#X restore 38 239 pd waveforms;
 #X restore 25 71 pd samplebanks;
 #X obj 25 126 track 0 \$0;
 #X obj 402 61 EXTERN_DUMMY;
