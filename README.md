@@ -3,10 +3,15 @@ special-delivery
 
 #### Dropship Pd Generative Music Engine
 This is a complete generative music system that creates constantly evolving modern Dubstep music, using a range of algorithmic composition techniques.
-##### Installation
+##### Running the patch
 The patch runs in [Pd-vanilla](http://puredata.info/downloads/pure-data), and any required externals are included. The externals (u_storechord, seq, midiparse etc.) have only been tested for Mac OS.  
-To run, clone the repo and open ```_main.pd``` in the root directory.
+1. Install [Pd-vanilla](http://puredata.info/downloads/pure-data) and clone this repo
+2. Download the supporting audio files
+from [here](https://www.dropbox.com/s/wx8oejh02npwjer/audio.zip?dl=0) and move the ```audio``` folder into the root directory
+3.  Open ```_main.pd``` in the root directory
+
 ##### Audio samples
+These are SoundCloud clips of this patch either just running in ambient mode, or looping the drop section lots of times.  
 [Ambient section](https://soundcloud.com/mohosounds/dropship-ambient-sample-3)  
 [Drops](https://soundcloud.com/mohosounds/dropship-drops)
 ##### How to use this patch
