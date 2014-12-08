@@ -1,7 +1,7 @@
 special-delivery
 ================
-
 #### Dropship Pd Generative Music Engine
+<img src="dropship-pd.png" class="img-responsive hero">
 This is a complete generative music system that creates constantly evolving modern Dubstep music, using a range of algorithmic composition techniques.
 ##### Running the patch
 The patch runs in [Pd-vanilla](http://puredata.info/downloads/pure-data), and any required externals are included. The externals (u_storechord, seq, midiparse etc.) have only been tested for Mac OS.  
